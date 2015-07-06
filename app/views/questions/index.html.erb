@@ -1,0 +1,26 @@
+
+<form>
+  <label>Hover over to play Random</label>
+  <button id="input" type="button"></button>
+</form>
+
+<form>
+  <label>Hover over to practice your <strong id="selected_number">3</strong>s tables</label>
+  <button id="ones" type="button"></button>
+</form>
+
+<form>
+  <label>Click to select number</label>
+  <button id="choose_number" type="button"></button>
+</form>
+
+<p>number played this round:</p>
+<p id="counter">0</p>
+
+<p>number won this round:</p>
+<p id="round_won">0</p>
+
+<p>number lost this round:</p>
+<p id="round_lost">0</p>
+
+<%= link_to "Show me my stats", question_path(current_user.id) %>
