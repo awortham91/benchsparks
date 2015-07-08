@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 20150630114712) do
 
   create_table "userquestionstats", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "total_questions"
-    t.integer "correct"
-    t.integer "incorrect"
+    t.integer "total_questions", default: 0
+    t.integer "correct",         default: 0
+    t.integer "incorrect",       default: 0
   end
 
   create_table "users", force: :cascade do |t|

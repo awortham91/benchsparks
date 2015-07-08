@@ -8,12 +8,13 @@ document.getElementById("ones").onmouseover = function() {playOnesGame(chosen_nu
 document.getElementById("choose_number").onclick = function() {choose_number()};
 
 function playOnesGame(n) {
+  user_id = document.getElementById("user").innerHTML;
+
   $.ajax({
-     url: 'questions/1',
-     success: function() {
-       chosen_number ++
-     }
+    type: "PATCH",
+     url: "/questions/1"
   });
+
 
   var x = document.getElementById("counter").innerHTML;
   var x = (parseInt(x));
@@ -23,6 +24,10 @@ var number = n;
 var number_two = Math.floor((Math.random() * 10) + 1);
 var input = prompt(number + '*' + number_two);
   if (Number(input) === (number * number_two)) {
+    $.ajax({
+      type: "PATCH",
+       url: "/questions/" + user_id + "/correct"
+    });
     var y = document.getElementById("round_won").innerHTML;
     var y = (parseInt(y));
     var y = y += 1
@@ -34,6 +39,10 @@ var input = prompt(number + '*' + number_two);
       playOnesGame(chosen_number);
     };
   } else {
+    $.ajax({
+      type: "PATCH",
+       url: "/questions/" + user_id + "/incorrect"
+    });
     var z = document.getElementById("round_lost").innerHTML;
     var z = (parseInt(z));
     var z = z += 1

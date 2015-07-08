@@ -4,8 +4,13 @@ Rails.application.routes.draw do
 
   resources :users, only: ["index"]
   resources :groups, only: ["index"]
-  resources :questions, only: ["index", "show", "update"]
-
+  resources :questions, only: ["index", "show", "update"] do
+    member do
+      patch 'correct'
+      patch 'incorrect'
+      get 'timedgame'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

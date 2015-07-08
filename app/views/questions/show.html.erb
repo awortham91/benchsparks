@@ -1,4 +1,5 @@
 <h1>Stats!</h1>
-<p>Total questions answered: <%= @stats.total_questions ||= 0 %></p>
-<p>Total correct: <%= @stats.correct ||= 0 %></p>
-<p>Total incorrect: <%= @stats.incorrect ||= 0 %></p>
+<p>Total questions answered: <%= @stats.total_questions %></p>
+<p>Total correct: <%= @stats.correct %></p>
+<p>Total incorrect: <%= @stats.incorrect %></p>
+<div id='user' style="visibility: hidden"><%= current_user.id %></div>

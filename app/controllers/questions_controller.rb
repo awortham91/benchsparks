@@ -5,12 +5,27 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @stats = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+    @stats = Userquestionstat.find(current_user.id)
   end
 
   def update
-    @userquestionstat = Userquestionstat.find(user_id: current_user.id)
-    @userquestionstat.increment!(:total_questions)
-    redirect_to :root_path
+    @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+    @userquestionstat.total_questions += 1
+    @userquestionstat.save
+  end
+
+  def correct
+    @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+    @userquestionstat.correct += 1
+    @userquestionstat.save
+  end
+
+  def incorrect
+    @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+    @userquestionstat.incorrect += 1
+    @userquestionstat.save
+  end
+
+  def timedgame
   end
 end
