@@ -26,9 +26,9 @@
       </ul>
       <ul class="left">
         <%- if current_user -%>
-          <li><%= link_to "My Stats", question_path(current_user.id) %></li>
+          <li><%= link_to "MyStats", question_path(current_user.id) %></li>
           <li><%= link_to "Practice", questions_path %></li>
-          <li><%= link_to "TimedGame", timedgame_question_path(current_user.id) %></li>
+          <li><%= link_to "TimedPractice", timedgame_question_path(current_user.id) %></li>
         <%- end -%>
       </ul>
     </section>

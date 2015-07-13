@@ -1,30 +1,30 @@
-<p>Why, hello there <%= current_user.name %>!</p>
+<p><%= current_user.name %>'s</p>
 <h1>Benchsparks</h1>
 <h2>Multiplication Tables!</h2>
 <% if current_user.benchspark > 0 %>
-  <button>1s</button>
+  <%= button_to "1s", user_path(1), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 1 %>
-  <button>2s</button>
+  <%= button_to "2s", user_path(2), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 2 %>
-  <button>3s</button>
+  <%= button_to "3s", user_path(3), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 3 %>
-  <button>4s</button>
+  <%= button_to "4s", user_path(4), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 4 %>
-  <button>5s</button>
+  <%= button_to "5s", user_path(5), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 5 %>
-  <button>6s</button>
+  <%= button_to "6s", user_path(6), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 6 %>
-  <button>7s</button>
+  <%= button_to "7s", user_path(7), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 7 %>
-  <button>8s</button>
+  <%= button_to "8s", user_path(8), method: :get, class: 'button' %>
 <% end %>
 <% if current_user.benchspark > 8 %>
-  <button>9s</button>
+  <%= button_to "9s", user_path(9), method: :get, class: 'button' %>
 <% end %>
