@@ -1,3 +1,30 @@
-<p>Why, hello there!</p>
-
-<%= link_to "Play Math game", questions_path %>
+<p>Why, hello there <%= current_user.name %>!</p>
+<h1>Benchsparks</h1>
+<h2>Multiplication Tables!</h2>
+<% if current_user.benchspark > 0 %>
+  <button>1s</button>
+<% end %>
+<% if current_user.benchspark > 1 %>
+  <button>2s</button>
+<% end %>
+<% if current_user.benchspark > 2 %>
+  <button>3s</button>
+<% end %>
+<% if current_user.benchspark > 3 %>
+  <button>4s</button>
+<% end %>
+<% if current_user.benchspark > 4 %>
+  <button>5s</button>
+<% end %>
+<% if current_user.benchspark > 5 %>
+  <button>6s</button>
+<% end %>
+<% if current_user.benchspark > 6 %>
+  <button>7s</button>
+<% end %>
+<% if current_user.benchspark > 7 %>
+  <button>8s</button>
+<% end %>
+<% if current_user.benchspark > 8 %>
+  <button>9s</button>
+<% end %>

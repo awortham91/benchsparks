@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @stats = Userquestionstat.find(current_user.id)
+      @stats = Userquestionstat.find_by user_id: current_user.id
   end
 
   def update
@@ -27,5 +27,16 @@ class QuestionsController < ApplicationController
   end
 
   def timedgame
+  end
+
+  def create
+    @question = Question.new(question_params)
+    @question.save
+  end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:body)
   end
 end

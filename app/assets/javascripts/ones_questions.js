@@ -3,8 +3,8 @@ var win = 0
 var lose = 0
 var i = 1
 
-document.getElementById("input").onmouseover = function() {playOnesGame(Math.floor((Math.random() * 10) + 1))};
-document.getElementById("ones").onmouseover = function() {playOnesGame(chosen_number)};
+document.getElementById("input").onclick = function() {playOnesGame(Math.floor((Math.random() * 10) + 1))};
+document.getElementById("ones").onclick = function() {playOnesGame(chosen_number)};
 document.getElementById("choose_number").onclick = function() {choose_number()};
 
 function playOnesGame(n) {
@@ -12,7 +12,7 @@ function playOnesGame(n) {
 
   $.ajax({
     type: "PATCH",
-     url: "/questions/1"
+     url: "/questions/" + user_id
   });
 
 

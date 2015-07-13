@@ -1,10 +1,21 @@
-<input type="button" id='counter' value='hi'>
+<div id='user' style="display: none"><%= current_user.id %></div>
+<input type="button" id='counter' value='Start the timer!'>
 
-<h1 id='countdown'>hi</h1>
+<h1 id='countdown'>Ready?</h1>
 
 <div id='number_one'></div>
 <div id='number_two'></div>
-<form>
-<input type="text" name="answer">
-<input type="submit" value="Submit">
-</form>
+<div id='answer_form'>
+  <form id='answer_zone' style="display: none" action=''>
+    <div><p><strong id='first_num'></strong> * <strong id='second_num'></strong></p></div>
+    <input id='answer_area' type="text" name="answer" autocomplete="off" autofocus>
+    <input style="visibility: hidden" type="submit" value="Submit" class='sub_button'>
+  </form>
+  <div id='info' style="display: none">
+    <p>Points: <strong id='points'>0</strong></p>
+  </div>
+  <div id='stats' style="display: none">
+    <p>Correct: <strong id='total_right'>0</strong></p>
+    <p>Incorrect: <strong id='total_wrong'>0</strong></p>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class Userquestion < ActiveRecord::Base
-  has_many :users
+  belongs_to :user
   has_many :questions
   validates :answer, numericality: { only_integer: true }
 end
