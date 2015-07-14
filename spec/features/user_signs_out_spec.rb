@@ -5,13 +5,13 @@ feature 'user signs out', %Q{
   I want to sign out
   So that my identity is forgotten about on the machine I'm using
 } do
+  let(:user) { FactoryGirl.create(:user) }
   # Acceptance Criteria
   # * If I'm signed in, i have an option to sign out
   # * When I opt to sign out, I get a confirmation that my identity has been
   #   forgotten on the machine I'm using
 
   scenario 'authenticated user signs out' do
-    user = FactoryGirl.create(:user)
 
     visit new_user_session_path
 
@@ -23,7 +23,7 @@ feature 'user signs out', %Q{
     expect(page).to have_content('Signed in successfully')
 
     click_link 'Sign Out'
-    expect(page).to have_content('Signed out successfully')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 
   scenario 'unauthenticated user attempts to sign out' do

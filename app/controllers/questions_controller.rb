@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-      @stats = Userquestionstat.find_or_create_by user_id: current_user.id
+      @stats = Userquestionstat.find_or_create_by user: current_user
   end
 
   def update

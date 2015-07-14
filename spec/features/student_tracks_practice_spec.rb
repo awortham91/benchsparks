@@ -3,10 +3,11 @@ require 'rails_helper'
 feature "Student views their stats" do
   let(:user) { FactoryGirl.create(:user) }
 
-  # As a student I want to be able to track how many questions I have answered
-  # so that I can see my progress.
+  # As a student I want to be able to track my session
+  # so that I can know how much work I have done.
   # Acceptance criteria:
-  # - Student can see the total number of questions they have answered
+  # - Student can click to play math game.
+  # - After each questions the stats update without refresh
 
   scenario 'I want to see how many questions I have answered' do
     stats = FactoryGirl.create(:userquestionstat)
@@ -20,7 +21,7 @@ feature "Student views their stats" do
 
     click_button 'Log in'
 
-    click_link 'Practice'
+    click_link 'MyStats'
 
     expect(page).to have_content(stats.total_questions)
     expect(page).to have_content(stats.correct)
