@@ -48,7 +48,13 @@ $(function() {
       success: function(response) {
         $.ajax({
           type: "PATCH",
-           url: "/questions/" + user_id
+           url: "/questions/" + user_id,
+           success: function(response) {
+             console.log(response);
+           },
+           error: function(response) {
+             console.log(response)
+           }
         });
         console.log(response)
         first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 10) + 1)
@@ -64,14 +70,26 @@ $(function() {
           var correct = correct += 1
           $.ajax({
             type: "PATCH",
-             url: "/questions/" + user_id + "/correct"
+             url: "/questions/" + user_id + "/correct",
+             success: function(response) {
+               console.log(response);
+             },
+             error: function(response) {
+               console.log(response)
+             }
           });
         } else {
           var totals = totals -= 1
           var incorrect = incorrect += 1
           $.ajax({
             type: "PATCH",
-             url: "/questions/" + user_id + "/incorrect"
+             url: "/questions/" + user_id + "/incorrect",
+             success: function(response) {
+               console.log(response);
+             },
+             error: function(response) {
+               console.log(response)
+             }
           });
         };
         document.getElementById("points").innerHTML = totals;

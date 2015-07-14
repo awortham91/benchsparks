@@ -5,25 +5,37 @@ class QuestionsController < ApplicationController
   end
 
   def show
-      @stats = Userquestionstat.find_by user_id: current_user.id
+      @stats = Userquestionstat.find_or_create_by user_id: current_user.id
   end
 
   def update
     @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
     @userquestionstat.total_questions += 1
-    @userquestionstat.save
+    if @userquestionstat.save
+      render json: { statusText: "it worked" }
+    else
+      render json: {statusText: "something went wrong"}
+    end
   end
 
   def correct
     @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
     @userquestionstat.correct += 1
-    @userquestionstat.save
+    if @userquestionstat.save
+      render json: { statusText: "it worked" }
+    else
+      render json: {statusText: "something went wrong"}
+    end
   end
 
   def incorrect
     @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
     @userquestionstat.incorrect += 1
-    @userquestionstat.save
+    if @userquestionstat.save
+      render json: { statusText: "it worked" }
+    else
+      render json: {statusText: "something went wrong"}
+    end
   end
 
   def timedgame
