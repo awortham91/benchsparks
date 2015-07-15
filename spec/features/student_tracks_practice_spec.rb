@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Student views their stats" do
+feature "practice page contains page tracker" do
   let(:user) { FactoryGirl.create(:user) }
 
   # As a student I want to be able to track my session
@@ -9,7 +9,7 @@ feature "Student views their stats" do
   # - Student can click to play math game.
   # - After each questions the stats update without refresh
 
-  scenario 'I want to see how many questions I have answered' do
+  scenario 'I want to answer some practice questions and see my progress' , js: true do
     stats = FactoryGirl.create(:userquestionstat)
     stats.user = user
     stats.save
@@ -21,10 +21,24 @@ feature "Student views their stats" do
 
     click_button 'Log in'
 
-    click_link 'MyStats'
+    click_link 'Practice'
 
-    expect(page).to have_content(stats.total_questions)
-    expect(page).to have_content(stats.correct)
-    expect(page).to have_content(stats.incorrect)
+    expect(page).to have_content(0)
+
+    click_button 'Play Random'
+
+    fill_in 'practice_answer_area', with: "1"
+
+    find(:id, 'practice_answer_area').native.send_keys("\n")
+
+    expect(page).to have_content('1')
+
+    click_button 'Play Random'
+
+    fill_in 'practice_answer_area', with: "1"
+
+    find(:id, 'practice_answer_area').native.send_keys("\n")
+
+    expect(page).to have_content('2')
   end
 end
