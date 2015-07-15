@@ -20,7 +20,7 @@ feature "Student views their stats" do
 
     click_button 'Log in'
 
-    click_link 'Practice'
+    click_link 'MyStats'
 
     expect(page).to have_content(stats.total_questions)
     expect(page).to have_content(stats.correct)
