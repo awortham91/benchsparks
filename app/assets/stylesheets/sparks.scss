@@ -1,7 +1,55 @@
+$blue : #150fb3;
+$yellow : #D7C70F;
+$orange : #D78510;
+$blue2 : #08054A;
+$yellow2 : #867B00;
+$orange2 : #864E00;
+$blue3 : #635EE2;
+$yellow3 : #FFF364;
+$orange3 : #EFA439;
+
 .inline {
   display: inline-block;
 }
 
 .large {
   font-size: 400%;
+}
+
+#bottom, #left, #right {
+	background: $orange3;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 20px;
+		}
+		#left { left: 0; }
+		#right { right: 0; }
+
+	#bottom {
+		left: 0; right: 0;
+		height: 20px;
+		}
+		#bottom { bottom: 0; }
+
+#bottom2, #left2, #right2 {
+	background: $blue3;
+	position: fixed;
+	}
+	#left2, #right2 {
+		top: 0; bottom: 0;
+		width: 12px;
+		}
+		#left2 { left: 0; }
+		#right2 { right: 0; }
+
+  #bottom2 {
+		left: 0; right: 0;
+		height: 12px;
+		}
+		#bottom2 { bottom: 0; }
+
+.inner_body {
+  padding: 40px;
 }

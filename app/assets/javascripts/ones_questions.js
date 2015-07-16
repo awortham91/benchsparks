@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	if($('div').is('.practice')){
+	if($('div').is('.practice')) {
 
     chosen_number = 3
     var win = 0
@@ -12,6 +12,7 @@ $(document).ready(function() {
     document.getElementById("paractice_answer_zone").onsubmit = function() { return submit_practice_answer()};
 
     function playOnesGame(n) {
+			document.getElementById("whole_problem").style.textShadow='none';
       document.getElementById("color_answer").innerHTML = '';
       document.getElementById("practice_answer_area").value = '';
       document.getElementById("practice_answer_area").style.display = "block";
@@ -30,7 +31,7 @@ $(document).ready(function() {
         var number_two = parseInt(document.getElementById("practice_two").innerHTML);
         $.ajax({
           type: "PATCH",
-           url: "/questions/" + user_id
+          url: "/questions/" + user_id
         });
         var x = document.getElementById("counter").innerHTML;
         var x = (parseInt(x));
@@ -38,10 +39,11 @@ $(document).ready(function() {
         document.getElementById("counter").innerHTML = x;
         var input = $('#practice_answer_area').val()
         if (Number(input) === (number * number_two)) {
-          document.getElementById("color_answer").style.backgroundColor = "green";
+          document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #33AD5C"
+          document.getElementById("color_answer").style.backgroundColor = "#33AD5C";
           $.ajax({
             type: "PATCH",
-             url: "/questions/" + user_id + "/correct"
+            url: "/questions/" + user_id + "/correct"
           });
           var y = document.getElementById("round_won").innerHTML;
           var y = (parseInt(y));
@@ -52,7 +54,8 @@ $(document).ready(function() {
           document.getElementById("cool_text").innerHTML = response;
           i++;
         } else {
-          document.getElementById("color_answer").style.backgroundColor = "green";
+					document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #FF5C33"
+          document.getElementById("color_answer").style.backgroundColor = "#FF5C33";
           $.ajax({
             type: "PATCH",
              url: "/questions/" + user_id + "/incorrect"
@@ -66,18 +69,17 @@ $(document).ready(function() {
           i++;
         };
         document.getElementById("practice_answer_area").style.display = "none";
-        return false;
-      };
-
-      function choose_number() {
-        if ($('#chosen_number_form').val() != '') {
-          chosen_number = $('#chosen_number_form').val();
-          console.log(chosen_number);
-          document.getElementById("selected_number").innerHTML = chosen_number;
-          document.getElementById("chosen_number_form").value = '';
-        };
       };
       return false;
+    };
+    function choose_number() {
+      if ($('#chosen_number_form').val() != '') {
+        chosen_number = $('#chosen_number_form').val();
+        console.log(chosen_number);
+        document.getElementById("selected_number").innerHTML = chosen_number;
+        document.getElementById("chosen_number_form").value = '';
+      };
+			return false;
     };
 
   };

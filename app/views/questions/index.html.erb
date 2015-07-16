@@ -6,25 +6,36 @@
   <br>
   <div id="choose_number">Select Number
     <form id='chosen_number_zone' action=''>
-      <input id='chosen_number_form' type='number' max="9" min="1" name="chosen_number_form" autocomplete="off">
+      <div class="small-3 columns">
+        <input id='chosen_number_form' class='inline' type='number' max="9" min="1" name="chosen_number_form" autocomplete="off">
+      </div>
       <input style="visibility: hidden" type="button" value='' class='number_sub_button' onsubmit="return choose_number();">
     </form>
   </div>
-  <div><strong id='practice_one' class='large'>0</strong>
+  <br>
+  <br>
+  <div id='whole_problem'><strong id='practice_one' class='large'>0</strong>
     <span class= 'large'>*</span>
     <strong id='practice_two' class='large'>0</strong>
-    <span class= 'large'>=</span>  <span id='color_answer' class= 'large'></span>
+    <span class= 'large'>=</span>  <span><strong id='color_answer' class= 'large'></strong></span>
   </div>
   <form id='paractice_answer_zone' action=''>
     <input id='practice_answer_area' style="display: none" type="number" min"1" max:"155" name="practice_answer_area" autocomplete="off">
     <input style="visibility: hidden" type="button" value='' class='practice_sub_button' onsubmit="return submit_practice_answer();">
   </form>
-  <div id='cool_text'></div>
-  <p>number played this round:</p>
-  <p id="counter">0</p>
-  <p>number won this round:</p>
-  <p id="round_won">0</p>
-  <p>number lost this round:</p>
-  <p id="round_lost">0</p>
-
+  <div id="practice_stat_wrapper">
+    <div id='cool_text'>Practice Time!</div>
+    <div class='panel inline practice_stat'>
+      <p>number played this round:</p>
+      <p id="counter">0</p>
+    </div>
+    <div class='panel inline practice_stat'>
+      <p>number won this round:</p>
+      <p id="round_won">0</p>
+    </div>
+    <div class='panel inline practice_stat'>
+      <p>number lost this round:</p>
+      <p id="round_lost">0</p>
+    </div>
+  </div>
 </div>

@@ -8,6 +8,16 @@ before_action :authenticate_user!, :authenticate_level
     @number = params[:id]
   end
 
+  def update
+    @user = User.find(current_user.id)
+    @user.benchspark += 1
+    if @user.save
+      render json: { statusText: "LevelUp!" }
+    else
+      render json: {statusText: "O no!"}
+    end
+  end
+
   protected
 
   def authenticate_level

@@ -1,0 +1,54 @@
+$blue : #150fb3;
+$yellow : #D7C70F;
+$orange : #D78510;
+$blue2 : #08054A;
+$yellow2 : #867B00;
+$orange2 : #864E00;
+$blue3 : #635EE2;
+$yellow3 : #FFF364;
+$orange3 : #EFA439;
+$victory_green: #33AD5C;
+$defeat_red: #FF5C33;
+
+#whole_problem {
+  border: solid $orange3 6px;
+  background-color: $blue3;
+  display: block;
+  padding: 10px 20px;
+  margin: 0 auto;
+  width: 33%;
+  text-align: center;
+}
+
+.text_shadow {
+  text-shadow: 7px 7px 24px #33AD5C;
+}
+
+#practice_answer_area {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#color_answer {
+  border-radius: 15px;
+}
+
+#practice_stat_wrapper {
+  border: solid $blue 7px;
+  width: 70%;
+  margin: auto;
+  text-align:center;
+}
+
+#cool_text {
+  color: $blue;
+  font-size: 30px;
+  text-align: center;
+}
+
+.practice_stat {
+  text-align: center;
+  display:inline-block;
+  width: 28%;
+}

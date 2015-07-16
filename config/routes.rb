@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'users#index'
 
-  resources :users, only: ["index", "show"]
+  resources :users, only: ["index", "show", "update"] do
+    resources :chalenges, only: ["index"]
+  end
+
   resources :groups, only: ["index"]
   resources :questions, only: ["index", "show", "update"] do
     member do
