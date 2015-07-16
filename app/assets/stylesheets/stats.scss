@@ -1,0 +1,27 @@
+$blue : #150fb3;
+$yellow : #D7C70F;
+$orange : #D78510;
+$blue2 : #08054A;
+$yellow2 : #867B00;
+$orange2 : #864E00;
+$blue3 : #635EE2;
+$yellow3 : #FFF364;
+$orange3 : #EFA439;
+
+#stats4 {
+  border: 5px solid $orange;
+}
+
+#stats1 {
+  border: 5px solid $blue2;
+}
+#stats2 {
+  border: 5px solid $blue;
+}
+#stats3 {
+  border: 5px solid $blue3;
+}
+
+#inner_stats {
+  display: inline-block;
+}

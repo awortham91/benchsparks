@@ -1,6 +1,6 @@
-<p><%= current_user.name %>'s</p>
-<h1>Benchsparks</h1>
-<h2>Multiplication Tables!</h2>
+<span class='medium_font'><%= current_user.name %>'s</span>
+<h1 class='benchsparks_title'>Benchsparks</h1>
+<h2 class='benchsparks_subtitle'>Multiplication Tables!</h2>
 <% if current_user.benchspark > 0 %>
   <%= button_to "1s", user_path(1), method: :get, class: 'button radius' %>
 <% end %>
