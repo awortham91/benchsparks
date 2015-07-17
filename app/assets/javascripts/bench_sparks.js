@@ -31,7 +31,10 @@ $(document).ready(function() {
   								document.getElementById("stats").style.backgroundColor = "#33AD5C";
   								$.ajax({
   	                type: "PATCH",
-  	                url: "/users/1" 
+  	                url: "/users/1",
+										success: function() {
+											document.getElementById("next_level").style.display = "block"
+										}
   	              });
   							} else {
                   document.getElementById("stats").style.backgroundColor = "#FF5C33";
