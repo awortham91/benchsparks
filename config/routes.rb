@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: ["index", "show", "update"] do
     resources :chalenges, only: ["index"]
   end
-
+  resources :admins, only: ["index"]
   resources :groups, only: ["index"]
   resources :questions, only: ["index", "show", "update"] do
     member do
