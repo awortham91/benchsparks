@@ -1,0 +1,16 @@
+<%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: '' %>
+<div class='outer_div'>
+  <table style="width:65%;">
+    <caption>All Groups</caption>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= button_to "edit", edit_group_path(group.id), method: :get, class: 'tiny button radius' %></td>
+        <td><%= button_to "delete", edit_group_path(group.id), method: :destroy, class: 'tiny button radius' %></td>
+        <td><button class='tiny'>show group</button></td>
+    <% end %>
+  </table>
+  <div style="width:25%;">
+
+  </div>
+</div>

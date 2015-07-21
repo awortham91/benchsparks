@@ -1,4 +1,7 @@
 class Group < ActiveRecord::Base
   validates :name, null: false
-  has_and_belongs_to_many :users
+  has_many :usergroups
+  has_many :users, through: :usergroups
+  belongs_to :usergroup
+  accepts_nested_attributes_for :usergroups
 end

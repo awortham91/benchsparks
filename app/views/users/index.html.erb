@@ -1,6 +1,10 @@
-<span class='medium_font'><%= current_user.name %>'s</span>
-<h1 class='benchsparks_title'>Benchsparks</h1>
-<h2 class='benchsparks_subtitle'>Multiplication Tables!</h2>
+<div id='benchsparks_title' class='outer_div'>
+  <div id='benchsparks_title_wrap'>
+    <span class='medium_font'><%= current_user.name %>'s</span>
+    <h1 class='benchsparks_title'>Benchsparks</h1>
+    <h2 class='benchsparks_subtitle'>Multiplication Tables!</h2>
+  </div>
+</div>
 <% if current_user.benchspark > 0 %>
   <%= button_to "1s", user_path(1), method: :get, class: 'button radius', form_class: 'benches' %>
 <% end %>
@@ -27,4 +31,7 @@
 <% end %>
 <% if current_user.benchspark > 8 %>
   <%= button_to "9s", user_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
+<% end %>
+<% if current_user.benchspark > 8 %>
+  <%= button_to "Multiplication Master", user_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
 <% end %>
