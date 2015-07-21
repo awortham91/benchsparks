@@ -15,3 +15,31 @@
  *= require foundation_and_overrides
 
  */
+
+ .outer_div {
+      box-shadow: 0 0 20px 2px gray;
+ }
+
+button {
+  box-shadow: 0 0 10px 2px gray;
+  border-radius: 15px;
+}
+
+button:hover {
+  box-shadow: 0 0 5px 1px black;
+}
+
+.button {
+  box-shadow: 0 0 15px gray;
+}
+
+
+.button:hover {
+  box-shadow: 0 0 5px 1px black;
+}
+
+body {
+  /*background: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcThfdji7XD61CjUkHKPoq7Ikhp8eh7oMaGYrGwI2RcVmUm9gGhKNw');
+  background-size: cover;
+  background-attachment:fixed;*/
+}

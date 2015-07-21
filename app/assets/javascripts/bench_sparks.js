@@ -33,6 +33,7 @@ $(document).ready(function() {
   	                type: "PATCH",
   	                url: "/users/1",
 										success: function() {
+											document.getElementById("next_level").style.backgroundColor = "green"
 											document.getElementById("next_level").style.display = "block"
 										}
   	              });
@@ -42,6 +43,7 @@ $(document).ready(function() {
               } else {
                 if (parseInt(document.getElementById("points").innerHTML) > 14) {
                   document.getElementById("stats").style.backgroundColor = "#33AD5C";
+									document.getElementById("next_level").style.display = "block"
                 } else {
                   document.getElementById("stats").style.backgroundColor = "#FF5C33";
                 };

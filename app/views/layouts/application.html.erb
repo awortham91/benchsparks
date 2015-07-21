@@ -41,6 +41,16 @@
       </ul>
     </section>
   </nav>
+  <% if current_user %>
+    <% if current_user.admin? %>
+      <dl class="sub-nav">
+        <dt>Admin Pages:</dt>
+        <dd><%= link_to "all users", admins_path %></dd>
+        <dd><%= link_to "groups", groups_path %></dd>
+        <dd><%= link_to "admin team", new_admin_path %></dd>
+      </dl>
+    <% end%>
+  <% end %>
 
   <div class='inner_body'>
     <%- flash.each do |key, value| -%>
