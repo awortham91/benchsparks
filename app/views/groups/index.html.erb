@@ -1,16 +1,17 @@
 <%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: '' %>
 <div class='outer_div'>
-  <table style="width:65%;">
+  <table style="width:65%; float:left;">
     <caption>All Groups</caption>
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
         <td><%= button_to "edit", edit_group_path(group.id), method: :get, class: 'tiny button radius' %></td>
-        <td><%= button_to "delete", edit_group_path(group.id), method: :destroy, class: 'tiny button radius' %></td>
-        <td><button class='tiny'>show group</button></td>
+        <td><%= button_to "delete", "groups/#{group.id}", method: :delete, data: {confirm: "Are you sure you want to destory #{group.name}?"}, class: 'tiny button radius' %></td>
+        <td><button class='tiny' onclick = show(<%= group.id %>)>show group</button></td>
     <% end %>
   </table>
-  <div style="width:25%;">
-
+  <div style="width:25%; float: left;">
+    <div id='name'></div>
+    <div id='students'></div>
   </div>
 </div>
