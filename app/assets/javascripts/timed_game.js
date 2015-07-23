@@ -51,7 +51,7 @@ $(document).ready(function() {
 			document.getElementById("counter").innerHTML = document.getElementById("skillz").innerHTML;
 			document.getElementById('answer_form').className += ' outer_div';
 			document.getElementById("answer_form").style.border = "5px solid #8253C1";
-			document.getElementById("countdown_wrapper").style.background = "#510EAB";
+			document.getElementById("countdown_wrapper").style.background = "#3849B5";
       document.getElementById("points").innerHTML = 0;
       document.getElementById("total_right").innerHTML = 0;
       document.getElementById("total_wrong").innerHTML = 0;
@@ -71,7 +71,7 @@ $(document).ready(function() {
               document.getElementById("answer_zone").style.display = "none";
               document.getElementById("stats").style.display = "block";
 							document.getElementById("answer_form").style.border = "0 solid #EFA43";
-							document.getElementById("countdown_wrapper").style.background = '#FF5C33';
+							document.getElementById("countdown_wrapper").style.background = '#04839B';
 							document.getElementById("level_select").style.visibility = "visible";
 							document.getElementById("counter").innerHTML = "Start the timer!";
             };

@@ -105,7 +105,7 @@ $include-html-global-classes: $include-html-classes;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
-// $aluminum    : #999999;
+// $aluminum    : #E6E6E6;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
@@ -1261,11 +1261,17 @@ $sub-nav-font-color: $primary-color-light;
 // $sub-nav-text-decoration: none;
 // $sub-nav-padding: rem-calc(3 16);
 // $sub-nav-border-radius: 3px;
-$sub-nav-font-color-hover: $primary-color;
+$sub-nav-font-color-hover: $primary-color-dark;
+
 .sub-nav {
   float: left;
   padding-left: 90px;
-  background:$gray-light;
+  background:$secondary-color;
+  border-radius: 25px;
+}
+
+.sub-nav a:hover {
+  background: linear-gradient($secondary-color, $white);
 }
 
 // We use these to control the active item styles
@@ -1433,19 +1439,19 @@ $topbar-title-font-size: rem-calc(25);
 }
 
 .topbar_wrap {
-  border-bottom: 3px solid $primary-color;
+  border-bottom: 8px solid $secondary-color;
 }
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $secondary-color;
-$topbar-link-color-hover: $primary-color;
+$topbar-link-color: $primary-color-light;
+$topbar-link-color-hover: $secondary-color-light;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: linear-gradient($primary-color, $primary-color-dark);
+$topbar-link-bg-hover: linear-gradient($primary-color, $secondary-color);
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

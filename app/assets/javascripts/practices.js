@@ -6,6 +6,7 @@ $(document).ready(function() {
     var lose = 0
     var i = 1
 		var retain = 0
+		var repeat = []
 
     document.getElementById("input").onclick = function() {playOnesGame(11)};
     document.getElementById("ones").onclick = function() {playOnesGame(chosen_number)};
@@ -20,10 +21,15 @@ $(document).ready(function() {
       document.getElementById("practice_answer_area").style.display = "block";
 			if (n === 11) {
 				var number = Math.floor((Math.random() * 10) + 1);
+				var number_two = Math.floor((Math.random() * 10) + 1);
+			} else if (n === 12) {
+				var number = repeat[0];
+				var number_two = repeat[1]
 			} else {
 				var number = n;
+				var number_two = Math.floor((Math.random() * 10) + 1);
 			};
-      var number_two = Math.floor((Math.random() * 10) + 1);
+
       document.getElementById("practice_one").innerHTML = number;
       document.getElementById("practice_two").innerHTML = number_two;
       document.getElementById("practice_answer_area").focus();
@@ -67,8 +73,8 @@ $(document).ready(function() {
             playOnesGame(retain)
 					}, 1500);
         } else {
-					document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #FF5C33"
-          document.getElementById("color_answer").style.backgroundColor = "#FF5C33";
+					document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #E6E6E6"
+          document.getElementById("color_answer").style.backgroundColor = "#666666";
           $.ajax({
             type: "PATCH",
              url: "/questions/" + user_id + "/incorrect"
@@ -80,6 +86,12 @@ $(document).ready(function() {
           var response = ('Better luck next time! You have won ' + Math.round(win/i * 100) + '% this round.');
           document.getElementById("cool_text").innerHTML = response;
           i++;
+					setTimeout(function(){
+						document.getElementById("ones").disabled = false;
+						document.getElementById("input").disabled = false;
+						repeat = [number, number_two]
+            playOnesGame(12)
+					}, 1500);
         };
         document.getElementById("practice_answer_area").style.display = "none";
 				return false;

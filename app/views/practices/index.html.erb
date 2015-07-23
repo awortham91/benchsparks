@@ -1,21 +1,22 @@
 <div class='practice'>
-
-  <div id='user' style="display: none"><%= current_user.id %></div>
-  <button class='radius' id="ones"><strong id='selected_number'>3</strong>s tables</button>
-  <button class='radius' id="input"><strong>P</strong>lay Random</button>
-  <br>
-  <div id="choose_number">Select Number
-    <form id='chosen_number_zone' action=''>
-      <div class="small-3 columns">
-        <input id='chosen_number_form' class='inline' type='number' max="9" min="1" name="chosen_number_form" autocomplete="off">
-      </div>
-      <input style="visibility: hidden" type="button" value='' class='number_sub_button' onsubmit="return choose_number();">
-    </form>
+  <div class='practice_select'>
+    <div id='user' style="display: none"><%= current_user.id %></div>
+    <button class='radius' id="ones"><strong id='selected_number'>3</strong>s tables</button>
+    <button class='radius' id="input"><strong>P</strong>lay Random</button>
+    <br>
+    <div id="choose_number">Select Number
+      <form id='chosen_number_zone' action=''>
+        <div class='select_practice_number'>
+          <input id='chosen_number_form' class='inline practice_text_field' type='number' max="9" min="1" name="chosen_number_form" autocomplete="off">
+        </div>
+        <input style="display:none" type="button" value='' class='number_sub_button' onsubmit="return choose_number();">
+      </form>
+    </div>
   </div>
   <br>
   <br>
-  <div class='outer_div' id='whole_problem'><strong id='practice_one' class='large'>0</strong>
-    <span class= 'large'>*</span>
+  <div class='outer_div' id='whole_problem'><strong id='practice_one' class='large'>0 </strong>
+    <span class= 'large'> * </span>
     <strong id='practice_two' class='large'>0</strong>
     <span class= 'large'>=</span>  <span><strong id='color_answer' class= 'large'></strong></span>
   </div>

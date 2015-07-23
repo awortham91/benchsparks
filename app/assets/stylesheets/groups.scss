@@ -14,7 +14,7 @@ $primary-color-light:#E6E6FF;
   margin:auto;
   text-align: center;
   padding: 20px;
-  background: linear-gradient($primary-color-light, $primary-color-dark);
+  background: linear-gradient($secondary-color, $primary-color);
 }
 
 .groups_table {
@@ -29,7 +29,7 @@ $primary-color-light:#E6E6FF;
 .show_div {
   display:inline-block;
   margin-left: 30px;
-  background: linear-gradient($primary-color-light, $primary-color-dark);
+  background: linear-gradient($primary-color-light, $secondary-color-light);
   position: absolute;
   padding: 20px;
   border: 1px solid $third-color;
@@ -42,5 +42,5 @@ $primary-color-light:#E6E6FF;
 }
 
 #students {
-  color: $secondary-color-light;
+  color: $primary-color-dark;
 }

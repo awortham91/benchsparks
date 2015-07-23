@@ -26,16 +26,17 @@ $primary-color-light:#E6E6FF;
 }
 
 #stats {
-  background-color: $secondary-color;
+  background-color: $primary-color-light;
   margin-left: 40px;
   margin-right: 40px;
   border: 5px solid $secondary-color;
 }
 
 #answer_area {
-  background-color:$third-color;
   width: 30%;
   margin: auto;
+  background: $primary-color-light;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 .time_game {

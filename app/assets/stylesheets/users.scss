@@ -15,7 +15,7 @@ $primary-color-light:#E6E6FF;
   margin: 0 auto;
   display: block;
   text-align: center;
-  background: linear-gradient($primary-color-light, $primary-color);
+  background: linear-gradient($secondary-color, $primary-color);
 }
 
 #users_table {
