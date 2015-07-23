@@ -1,14 +1,13 @@
-$blue : #150fb3;
-$yellow : #D7C70F;
-$orange : #D78510;
-$blue2 : #08054A;
-$yellow2 : #867B00;
-$orange2 : #864E00;
-$blue3 : #635EE2;
-$yellow3 : #FFF364;
-$orange3 : #EFA439;
-$victory_green: #33AD5C;
-$defeat_red: #FF5C33;
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-shadow:#E6E6FF;
 
 #whole_problem {
   border: solid $orange3 6px;
@@ -36,16 +35,21 @@ $defeat_red: #FF5C33;
 }
 
 #practice_stat_wrapper {
-  border: solid $blue 7px;
+  border: solid $primary-color 7px;
   width: 70%;
   margin: auto;
   text-align:center;
   border-radius: 5px;
-  margin-top: 40px
+  margin-top: 40px;
+  background: linear-gradient(#E6E6E6, $blue3);
+}
+
+.panel {
+  background: $background_yellow;
 }
 
 #cool_text {
-  color: $blue;
+  color: $primary-color;
   font-size: 30px;
   text-align: center;
 }
@@ -54,4 +58,9 @@ $defeat_red: #FF5C33;
   text-align: center;
   display:inline-block;
   width: 28%;
+}
+
+#chosen_number_form {
+  background: $background_yellow;
+  box-shadow: inset 0 0 10px #000000;
 }

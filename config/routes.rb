@@ -2,19 +2,23 @@ Rails.application.routes.draw do
   devise_for :users
   root 'homes#index'
 
-  resources :users, only: ["index", "show", "update"] do
-    resources :chalenges, only: ["index"]
-  end
+  resources :userquestions, only: ["create"]
+  resources :timedpractices, only: ["index"]
+  resources :benchsparks, only: ["index", "show", "update"]
+  resources :statistics, only: ["index"]
+  resources :practices, only: ["index"]
+  resources :users, only: ["index"]
   resources :admins, only: ["index", "new"]
   resources :groups
-  resources :questions, only: ["index", "show", "update"] do
+  resources :questions, only: ["update"] do
     member do
+      get 'timedgame'
       patch 'correct'
       patch 'incorrect'
-      get 'timedgame'
     end
   end
-  resources :userquestions, only: ["create"]
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

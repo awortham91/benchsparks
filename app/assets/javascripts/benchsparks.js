@@ -31,7 +31,7 @@ $(document).ready(function() {
   								document.getElementById("stats").style.backgroundColor = "#33AD5C";
   								$.ajax({
   	                type: "PATCH",
-  	                url: "/users/1",
+  	                url: "/benchsparks/1",
 										success: function() {
 											document.getElementById("next_level").style.backgroundColor = "green"
 											document.getElementById("next_level").style.display = "block"

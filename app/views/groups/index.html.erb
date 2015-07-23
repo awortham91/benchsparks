@@ -1,6 +1,6 @@
-<%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: '' %>
-<div class='outer_div'>
-  <table style="width:65%; float:left;">
+<%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: 'new_group' %>
+<div class='groups_index outer_div'>
+  <table class='groups_table'>
     <caption>All Groups</caption>
     <% @groups.each do |group| %>
       <tr>
@@ -10,8 +10,8 @@
         <td><button class='tiny' onclick = show(<%= group.id %>)>show group</button></td>
     <% end %>
   </table>
-  <div style="width:25%; float: left;">
-    <div id='name'></div>
+  <div class='show_div'>
+    <div id='name'>see groups here</div>
     <div id='students'></div>
   </div>
 </div>

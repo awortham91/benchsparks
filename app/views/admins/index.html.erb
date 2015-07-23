@@ -1,19 +1,8 @@
-<table style="width:70%; margin:auto;">
-  <caption>All Students</caption>
-  <tr>
-    <th>Students</th>
-    <th>total_questions</th>
-    <th>correct questions</th>
-    <th>incorrect questions</th>
-    <th>percent correct</th>
-  </tr>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
-      <td><%= user.userquestionstat.total_questions %></td>
-      <td><%= user.userquestionstat.correct %></td>
-      <td><%= user.userquestionstat.incorrect %></td>
-      <td><%= (user.userquestionstat.correct.to_f / user.userquestionstat.total_questions.to_f).round(2) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class='admin_list outer_div'>
+  <p class='admin_title'>The Admin Team!</p>
+  <ul>
+    <% @users.each do |user| %>
+      <%= user.name %>
+    <% end %>
+  </ul>
+</div>

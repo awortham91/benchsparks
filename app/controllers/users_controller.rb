@@ -1,30 +1,11 @@
 class UsersController < ApplicationController
-before_action :authenticate_user!, :authenticate_level
+  before_action :authenticate_user!
   def index
-
-  end
-
-  def show
-    @number = params[:id]
-  end
-
-  def update
-    @user = User.find(current_user.id)
-    @user.benchspark += 1
-    if @user.save
-      render json: { statusText: "LevelUp!" }
+    if current_user.admin?
+      @users = User.where(admin:false)
     else
-      render json: {statusText: "O no!"}
-    end
-  end
-
-  protected
-
-  def authenticate_level
-    if(current_user.benchspark >= params[:id].to_i)
-      return true
-    else
-      redirect_to users_path
+      flash[:error] = 'You are not allowed there!'
+      redirect_to root_path
     end
   end
 end

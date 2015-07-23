@@ -114,19 +114,21 @@ $include-html-global-classes: $include-html-classes;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
-$blue : #150fb3;
-$yellow : #D7C70F;
-$orange : #D78510;
-$blue2 : #08054A;
-$yellow2 : #867B00;
-$orange2 : #864E00;
-$blue3 : #635EE2;
-$yellow3 : #FFF364;
-$orange3 : #EFA439;
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-shadow:#E6E6FF
+
+
 
 // We use these as default colors throughout
-$primary-color: #150fb3;
-$secondary-color: #D7C70F;
+
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -473,7 +475,7 @@ $global-radius: 15px;
 // We use these to control button border styles.
 $button-border-width: 5px;
 $button-border-style: solid;
-$button-bg-color: $orange;
+$button-bg-color: $secondary-color;
 $button-bg-hover: #B26B00;
 $button-border-color: $orange2;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1254,13 +1256,17 @@ $button-border-color: $orange2;
 // We use this to control the definition
 // $sub-nav-font-family: $body-font-family;
 // $sub-nav-font-size: rem-calc(14);
-// $sub-nav-font-color: $aluminum;
+$sub-nav-font-color: $yellow3;
 // $sub-nav-font-weight: $font-weight-normal;
 // $sub-nav-text-decoration: none;
 // $sub-nav-padding: rem-calc(3 16);
 // $sub-nav-border-radius: 3px;
-// $sub-nav-font-color-hover: scale-color($sub-nav-font-color, $lightness: -25%);
-
+$sub-nav-font-color-hover: $primary-color;
+.sub-nav {
+  float: left;
+  padding-left: 90px;
+  background:gray;
+}
 
 // We use these to control the active item styles
 
@@ -1421,16 +1427,25 @@ $topbar-height: rem-calc(60);
 // $topbar-title-weight: $font-weight-normal;
 $topbar-title-font-size: rem-calc(25);
 
+.top-bar .name h1 a:hover {
+  color: $primary-color;
+  background: linear-gradient($orange2, $orange3);
+}
+
+.topbar_wrap {
+  border-bottom: 3px solid $blue2;
+}
+
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $yellow;
-$topbar-link-color-hover: $blue;
+$topbar-link-color-hover: $primary-color;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: $yellow;
+$topbar-link-bg-hover: linear-gradient($yellow, $yellow3);
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

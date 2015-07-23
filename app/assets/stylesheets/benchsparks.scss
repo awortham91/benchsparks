@@ -1,3 +1,14 @@
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-shadow:#E6E6FF;
+
 .medium_font {
   font-size: 30px;
 }
@@ -21,8 +32,23 @@
   width: 50%;
   margin: auto;
   margin-bottom: 40px;
+  background: #FFFFCC;
+  padding: 15px;
+  border: 2px solid #D78510;
 }
+
 
 #benchsparks_title_wrap {
   display: inline-block;
+}
+
+.benchspark_buttons {
+  width: 75%;
+  margin:auto;
+  text-align: center;
+}
+
+.benchspark_multiplication_master {
+  display: block;
+  text-align: center;
 }

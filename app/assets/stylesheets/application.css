@@ -16,13 +16,15 @@
 
  */
 
+
  .outer_div {
       box-shadow: 0 0 20px 2px gray;
+      border-radius: 15px;
  }
 
 button {
   box-shadow: 0 0 10px 2px gray;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -39,7 +41,7 @@ button:hover {
 }
 
 body {
-  /*background: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcThfdji7XD61CjUkHKPoq7Ikhp8eh7oMaGYrGwI2RcVmUm9gGhKNw');
+  /*background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQQ0nwcOStIx7r5a9bK3KcbN15woYUbOpya6v_tfGKcKyCnGDl5A');
   background-size: cover;
   background-attachment:fixed;*/
 }

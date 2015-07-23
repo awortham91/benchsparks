@@ -3,7 +3,7 @@ function show(n) {
     type: "GET",
     url:  "/groups/" + n,
     success: function(response) {
-      document.getElementById("name").innerHTML = "Name: " + response.name;
+      document.getElementById("name").innerHTML = response.name;
       var students = ''
       response.users.forEach(function(student) {
         students = students + student + "<br>"

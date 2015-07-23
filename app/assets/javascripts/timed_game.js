@@ -1,15 +1,61 @@
 $(document).ready(function() {
 	if($('div').is('.time_game')){
+    var easyArray = [1,1,2,2,3,3,4,4,5,5,6,7,8,9]
+ 		var hardArray = [1,2,3,4,5,6,6,7,7,7,8,8,8,9,9,9]
 
-    document.getElementById("counter").onclick = function() {countdown()};
+		function random(array) {
+      var number = array[Math.floor(Math.random() * array.length)];
+			return number;
+    };
 
-    function countdown() {
+		function easy() {
+			return random(easyArray)
+		};
+
+		function medium() {
+			return Math.floor((Math.random() * 10) + 1);
+		};
+
+		function hard() {
+			return random(hardArray)
+		};
+
+		document.getElementById("difficulty").onchange = function() {showValue(this.value)};
+
+		function showValue(newValue) {
+			if (newValue === '1') {
+				document.getElementById("skillz").innerHTML = "Easy";
+			} else if (newValue === '2') {
+				document.getElementById("skillz").innerHTML = "Medium";
+			}  else {
+				document.getElementById("skillz").innerHTML = "Hard";
+			}
+			document.getElementById("range").innerHTML=newValue;
+	  }
+
+    document.getElementById("counter").onclick = function() {countdown(document.getElementById("range").innerHTML)};
+
+    function countdown(level) {
+			if (level === '1') {
+				first = document.getElementById("first_num").innerHTML = easy()
+				second = document.getElementById("second_num").innerHTML = easy()
+			} else if (level === '2') {
+				first = document.getElementById("first_num").innerHTML = medium()
+				second = document.getElementById("second_num").innerHTML = medium()
+			}  else {
+				first = document.getElementById("first_num").innerHTML = hard()
+				second = document.getElementById("second_num").innerHTML = hard()
+			}
+
+      document.getElementById("level_select").style.visibility = "hidden";
+			document.getElementById("counter").innerHTML = document.getElementById("skillz").innerHTML;
+			document.getElementById('answer_form').className += ' outer_div';
+			document.getElementById("answer_form").style.border = "5px solid #EFA439";
+			document.getElementById("countdown_wrapper").style.background = "#D7C70F";
       document.getElementById("points").innerHTML = 0;
       document.getElementById("total_right").innerHTML = 0;
       document.getElementById("total_wrong").innerHTML = 0;
       document.getElementById("stats").style.display = "none";
-      first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 10) + 1)
-      second = document.getElementById("second_num").innerHTML = Math.floor((Math.random() * 10) + 1)
       toggle_away();
       document.getElementById("counter").disabled = true;
         var seconds = 61;
@@ -20,9 +66,14 @@ $(document).ready(function() {
             if( seconds > 0 ) {
                 setTimeout(tick, 1000);
             } else {
+							document.getElementById('answer_form').className -= ' outer_div';
               document.getElementById("counter").disabled = false;
               document.getElementById("answer_zone").style.display = "none";
               document.getElementById("stats").style.display = "block";
+							document.getElementById("answer_form").style.border = "0 solid #EFA43";
+							document.getElementById("countdown_wrapper").style.background = '#FF5C33';
+							document.getElementById("level_select").style.visibility = "visible";
+							document.getElementById("counter").innerHTML = "Start the timer!";
             };
         };
         tick();
@@ -36,6 +87,7 @@ $(document).ready(function() {
 
     $(function() {
       $(".sub_button").click(function() {
+				var level = document.getElementById("range").innerHTML;
         if ($('#answer_area').val() != '') {
           var user_id = document.getElementById("user").innerHTML;
           var answer=$('#answer_area').val();
@@ -61,8 +113,16 @@ $(document).ready(function() {
                  }
               });
               console.log(response)
-              first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 10) + 1)
-              second = document.getElementById("second_num").innerHTML = Math.floor((Math.random() * 10) + 1)
+							if (level === '1') {
+								first = document.getElementById("first_num").innerHTML = easy()
+								second = document.getElementById("second_num").innerHTML = easy()
+							} else if (level === '2') {
+								first = document.getElementById("first_num").innerHTML = medium()
+								second = document.getElementById("second_num").innerHTML = medium()
+							}  else {
+								first = document.getElementById("first_num").innerHTML = hard()
+								second = document.getElementById("second_num").innerHTML = hard()
+							}
               var totals = document.getElementById("points").innerHTML;
               var totals = (parseInt(totals));
               var correct = document.getElementById("total_right").innerHTML;
