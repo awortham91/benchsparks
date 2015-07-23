@@ -1,32 +1,33 @@
-$blue : #150fb3;
-$yellow : #D7C70F;
-$orange : #D78510;
-$blue2 : #08054A;
-$yellow2 : #867B00;
-$orange2 : #864E00;
-$blue3 : #635EE2;
-$yellow3 : #FFF364;
-$orange3 : #EFA439;
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-color-light:#E6E6FF;
 
 #stats1 {
   box-shadow: 0 0 15px gray;
-  border: 5px solid $blue2;
+  border: 5px solid $primary-color;
   display: block;
   width: 50%;
   margin: auto;
   border-radius: 15px;
 }
 #stats2 {
-  border: 5px solid $blue;
+  border: 5px solid $primary-color;
   border-radius: 10px;
 }
 #stats3 {
-  border: 5px solid $blue3;
+  border: 5px solid $primary-color-light;
   border-radius: 5px;
 }
 
 #stats4 {
-  border: 5px solid $orange;
+  border: 5px solid $third-color;
   border-radius: 0px;
 }
 
@@ -34,15 +35,19 @@ $orange3 : #EFA439;
   padding: 0px 20px;
 }
 
+#stats4 {
+  background: $primary-color-light;
+}
+
 #title {
   text-align: center;
 }
 
 #title p {
-  color: $blue2;
+  color: $primary-color;
   font-size: 30px;
 }
 
 .stat {
-  color: $blue2;
+  color: $primary-color;
 }

@@ -1,6 +1,17 @@
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-color-light:#E6E6FF;
+
 #answer_form {
-  border: 5px solid #EFA439;
-  background-color: #635EE2;
+  border:0px solid black;
+  background-color: $secondary-color-light;
 }
 
 #timed_problems p {
@@ -8,20 +19,41 @@
 }
 
 #countdown_wrapper {
-  border: 3px solid #EFA439;
+  border: 3px solid $secondary-color-light;
   border-radius: 50px;
   display: inline-block;
   padding: 15px;
 }
 
 #stats {
-  background-color: #D7C70F;
+  background-color: $primary-color-light;
   margin-left: 40px;
   margin-right: 40px;
-  border: 5px solid #867B00;
+  border: 5px solid $secondary-color;
 }
 
 #answer_area {
-  background-color : #d1d1d1;
   width: 30%;
+  margin: auto;
+  background: $primary-color-light;
+  box-shadow: inset 0 0 10px #000000;
+}
+
+.time_game {
+  display: block;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+#couter {
+  float: center;
+}
+
+#countdown_wrapper {
+  float: right;
+}
+
+#range {
+  display:none;
 }

@@ -1,37 +1,28 @@
-<div id='benchsparks_title' class='outer_div'>
-  <div id='benchsparks_title_wrap'>
-    <span class='medium_font'><%= current_user.name %>'s</span>
-    <h1 class='benchsparks_title'>Benchsparks</h1>
-    <h2 class='benchsparks_subtitle'>Multiplication Tables!</h2>
-  </div>
+<div id='users' class='outer_div'>
+  <table id="users_table">
+    <caption>All Students</caption>
+    <tr>
+      <th>Students</th>
+      <th>total_questions</th>
+      <th>correct questions</th>
+      <th>incorrect questions</th>
+      <th>percent correct</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+          <% if user.userquestionstat %>
+            <td><%= user.userquestionstat.total_questions %></td>
+            <td><%= user.userquestionstat.correct %></td>
+            <td><%= user.userquestionstat.incorrect %></td>
+            <td><%= (user.userquestionstat.correct.to_f / user.userquestionstat.total_questions.to_f).round(2) %></td>
+          <% else %>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>NaN</td>
+          <% end %>
+      </tr>
+    <% end %>
+  </table>
 </div>
-<% if current_user.benchspark > 0 %>
-  <%= button_to "1s", user_path(1), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 1 %>
-  <%= button_to "2s", user_path(2), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 2 %>
-  <%= button_to "3s", user_path(3), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 3 %>
-  <%= button_to "4s", user_path(4), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 4 %>
-  <%= button_to "5s", user_path(5), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 5 %>
-  <%= button_to "6s", user_path(6), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 6 %>
-  <%= button_to "7s", user_path(7), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 7 %>
-  <%= button_to "8s", user_path(8), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 8 %>
-  <%= button_to "9s", user_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>
-<% if current_user.benchspark > 8 %>
-  <%= button_to "Multiplication Master", user_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
-<% end %>

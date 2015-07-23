@@ -1,22 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @total = Userquestion.where(user_id: current_user.id).count
-  end
 
-  def show
-      @stats = Userquestionstat.find_or_create_by user: current_user
-  end
-
-  def update
-    @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
-    @userquestionstat.total_questions += 1
-    if @userquestionstat.save
-      render json: { statusText: "it worked" }
-    else
-      render json: {statusText: "something went wrong"}
-    end
-  end
 
   def correct
     @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
@@ -38,7 +22,14 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def timedgame
+  def update
+    @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+    @userquestionstat.total_questions += 1
+    if @userquestionstat.save
+      render json: { statusText: "it worked" }
+    else
+      render json: {statusText: "something went wrong"}
+    end
   end
 
   def create

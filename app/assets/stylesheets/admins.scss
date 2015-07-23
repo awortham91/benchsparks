@@ -9,9 +9,16 @@ $black: #000000;
 $gray-light: #E6E6E6;
 $primary-color-light:#E6E6FF;
 
-#homes_back {
-  height:100%;
-  width: 100%;
-  background-size: cover;
-  background-color: $secondary-color;
+.admin_list {
+  border: 3px solid blue;
+  margin: auto;
+  width:40%;
+  text-align: center;
+  background: $primary-color-light;
+  color: $third-color;
+}
+
+.admin_title {
+  font-size: 25px;
+  color: $primary-color;
 }

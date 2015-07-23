@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720163215) do
+ActiveRecord::Schema.define(version: 20150723042730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,18 @@ ActiveRecord::Schema.define(version: 20150720163215) do
     t.string "name"
   end
 
+  create_table "levels", force: :cascade do |t|
+    t.string "level"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "body"
+  end
+
+  create_table "timed_challenges", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "level_id"
+    t.integer "score"
   end
 
   create_table "usergroups", force: :cascade do |t|
@@ -40,6 +50,24 @@ ActiveRecord::Schema.define(version: 20150720163215) do
     t.integer "total_questions", default: 0
     t.integer "correct",         default: 0
     t.integer "incorrect",       default: 0
+    t.integer "onecorrect",      default: 0
+    t.integer "onetotal",        default: 0
+    t.integer "twocorrect",      default: 0
+    t.integer "twototal",        default: 0
+    t.integer "threecorrect",    default: 0
+    t.integer "threetotal",      default: 0
+    t.integer "fourcorrect",     default: 0
+    t.integer "fourtotal",       default: 0
+    t.integer "fivecorrect",     default: 0
+    t.integer "fivetotal",       default: 0
+    t.integer "sixcorrect",      default: 0
+    t.integer "sixtotal",        default: 0
+    t.integer "sevencorrect",    default: 0
+    t.integer "seventotal",      default: 0
+    t.integer "eightcorrect",    default: 0
+    t.integer "eighttotal",      default: 0
+    t.integer "ninecorrect",     default: 0
+    t.integer "ninetotal",       default: 0
   end
 
   create_table "users", force: :cascade do |t|

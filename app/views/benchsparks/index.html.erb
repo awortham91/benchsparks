@@ -1,0 +1,41 @@
+<div id='benchsparks_title' class='outer_div'>
+  <div id='benchsparks_title_wrap'>
+    <span class='medium_font'><%= current_user.name %>'s</span>
+    <h1 class='benchsparks_title'>Benchsparks</h1>
+    <h2 class='benchsparks_subtitle'>Multiplication Tables!</h2>
+  </div>
+</div>
+<div class='benchspark_buttons'>
+  <% if current_user.benchspark > 0 %>
+    <%= button_to "1s", benchspark_path(1), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 1 %>
+    <%= button_to "2s", benchspark_path(2), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 2 %>
+    <%= button_to "3s", benchspark_path(3), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 3 %>
+    <%= button_to "4s", benchspark_path(4), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 4 %>
+    <%= button_to "5s", benchspark_path(5), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 5 %>
+    <%= button_to "6s", benchspark_path(6), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 6 %>
+    <%= button_to "7s", benchspark_path(7), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 7 %>
+    <%= button_to "8s", benchspark_path(8), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+  <% if current_user.benchspark > 8 %>
+    <%= button_to "9s", benchspark_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+</div>
+<div class='benchspark_multiplication_master'>
+  <% if current_user.benchspark > 8 %>
+    <%= button_to "Multiplication Master", benchspark_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% end %>
+</div>

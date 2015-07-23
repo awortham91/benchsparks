@@ -28,10 +28,10 @@ $(document).ready(function() {
               document.getElementById("stats").style.display = "block";
               if (user_level === level) {
   							if (parseInt(document.getElementById("points").innerHTML) > 14) {
-  								document.getElementById("stats").style.backgroundColor = "#33AD5C";
+  								document.getElementById("stats").style.backgroundColor = "#04839B";
   								$.ajax({
   	                type: "PATCH",
-  	                url: "/users/1",
+  	                url: "/benchsparks/1",
 										success: function() {
 											document.getElementById("next_level").style.backgroundColor = "green"
 											document.getElementById("next_level").style.display = "block"
@@ -42,7 +42,7 @@ $(document).ready(function() {
                 };
               } else {
                 if (parseInt(document.getElementById("points").innerHTML) > 14) {
-                  document.getElementById("stats").style.backgroundColor = "#33AD5C";
+                  document.getElementById("stats").style.backgroundColor = "#04839B";
 									document.getElementById("next_level").style.display = "block"
                 } else {
                   document.getElementById("stats").style.backgroundColor = "#FF5C33";

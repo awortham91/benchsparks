@@ -1,0 +1,46 @@
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-color-light:#E6E6FF;
+
+.groups_index {
+  width: 70%;
+  margin:auto;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient($secondary-color, $primary-color);
+}
+
+.groups_table {
+  margin:auto;
+  display:inline-block;
+}
+
+.new_group {
+  text-align: center;
+}
+
+.show_div {
+  display:inline-block;
+  margin-left: 30px;
+  background: linear-gradient($primary-color-light, $secondary-color-light);
+  position: absolute;
+  padding: 20px;
+  border: 1px solid $third-color;
+  min-width: 15%
+}
+
+#name {
+  color: #150fb3;
+  font-size: 20px;
+}
+
+#students {
+  color: $primary-color-dark;
+}

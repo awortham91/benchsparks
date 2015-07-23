@@ -14,40 +14,41 @@
   <div id="right2"></div>
   <div id="top2"></div>
   <div id="bottom2"></div>
-
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/users">Benchsparks</a></h1>
-      </li>
-    </ul>
-
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
+  <div class='topbar_wrap'>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/benchsparks">Benchsparks</a></h1>
+        </li>
       </ul>
-      <ul class="left">
-        <%- if current_user -%>
-          <li><%= link_to "MyStats", question_path(current_user.id) %></li>
-          <li><%= link_to "Practice", questions_path %></li>
-          <li><%= link_to "TimedPractice", timedgame_question_path(current_user.id) %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <%- if current_user -%>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%- else -%>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <%- end -%>
+        </ul>
+        <ul class="left">
+          <%- if current_user -%>
+            <li><%= link_to "MyStats", statistics_path %></li>
+            <li><%= link_to "Practice", practices_path %></li>
+            <li><%= link_to "TimedPractice", timedpractices_path %></li>
+          <%- end -%>
+        </ul>
+      </section>
+    </nav>
+  </div>
   <% if current_user %>
     <% if current_user.admin? %>
       <dl class="sub-nav">
         <dt>Admin Pages:</dt>
-        <dd><%= link_to "all users", admins_path %></dd>
+        <dd><%= link_to "all users", users_path %></dd>
         <dd><%= link_to "groups", groups_path %></dd>
-        <dd><%= link_to "admin team", new_admin_path %></dd>
+        <dd><%= link_to "admin team", admins_path %></dd>
+        <dd><dd>
       </dl>
     <% end%>
   <% end %>
