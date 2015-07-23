@@ -7,7 +7,7 @@ $third-color: #04839B;
 $white: #FFFFFF;
 $black: #000000;
 $gray-light: #E6E6E6;
-$primary-shadow:#E6E6FF;
+$primary-color-light:#E6E6FF;
 
 .inline {
   display: inline-block;
@@ -18,7 +18,7 @@ $primary-shadow:#E6E6FF;
 }
 
 #bottom, #left, #right {
-	background: $orange3;
+	background: $secondary-color;
 	position: fixed;
 	}
 	#left, #right {

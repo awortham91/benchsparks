@@ -7,7 +7,7 @@ $third-color: #04839B;
 $white: #FFFFFF;
 $black: #000000;
 $gray-light: #E6E6E6;
-$primary-shadow:#E6E6FF;
+$primary-color-light:#E6E6FF;
 
 #users {
   padding: 20px;
@@ -15,7 +15,7 @@ $primary-shadow:#E6E6FF;
   margin: 0 auto;
   display: block;
   text-align: center;
-  background: linear-gradient(#FFFFCC, #E6E6E6);
+  background: linear-gradient($primary-color-light, $primary-color);
 }
 
 #users_table {

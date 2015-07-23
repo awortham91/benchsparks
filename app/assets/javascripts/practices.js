@@ -45,8 +45,8 @@ $(document).ready(function() {
         document.getElementById("counter").innerHTML = x;
         var input = $('#practice_answer_area').val()
         if (Number(input) === (number * number_two)) {
-          document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #33AD5C"
-          document.getElementById("color_answer").style.backgroundColor = "#33AD5C";
+          document.getElementById("whole_problem").style.textShadow= "7px 7px 24px #04839B"
+          document.getElementById("color_answer").style.backgroundColor = "#04839B";
           $.ajax({
             type: "PATCH",
             url: "/questions/" + user_id + "/correct"

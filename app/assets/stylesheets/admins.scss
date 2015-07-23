@@ -1,13 +1,24 @@
+$primary-color: #150fb3;
+$primary-color-light: #3849B5;
+$primary-color-dark: #0A176A;
+$secondary-color: #510EAB;
+$secondary-color-light: #8253C1;
+$third-color: #04839B;
+$white: #FFFFFF;
+$black: #000000;
+$gray-light: #E6E6E6;
+$primary-color-light:#E6E6FF;
+
 .admin_list {
   border: 3px solid blue;
   margin: auto;
   width:40%;
   text-align: center;
-  background: #FFFFCC;
-  color: #635EE2
+  background: $primary-color-light;
+  color: $third-color;
 }
 
 .admin_title {
   font-size: 25px;
-  color: #150fb3;
+  color: $primary-color;
 }

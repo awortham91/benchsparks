@@ -50,8 +50,8 @@ $(document).ready(function() {
       document.getElementById("level_select").style.visibility = "hidden";
 			document.getElementById("counter").innerHTML = document.getElementById("skillz").innerHTML;
 			document.getElementById('answer_form').className += ' outer_div';
-			document.getElementById("answer_form").style.border = "5px solid #EFA439";
-			document.getElementById("countdown_wrapper").style.background = "#D7C70F";
+			document.getElementById("answer_form").style.border = "5px solid #8253C1";
+			document.getElementById("countdown_wrapper").style.background = "#510EAB";
       document.getElementById("points").innerHTML = 0;
       document.getElementById("total_right").innerHTML = 0;
       document.getElementById("total_wrong").innerHTML = 0;

@@ -7,7 +7,7 @@ $third-color: #04839B;
 $white: #FFFFFF;
 $black: #000000;
 $gray-light: #E6E6E6;
-$primary-shadow:#E6E6FF;
+$primary-color-light:#E6E6FF;
 
 .medium_font {
   font-size: 30px;
@@ -15,7 +15,7 @@ $primary-shadow:#E6E6FF;
 
 .benchsparks_title {
   font-size: 50px;
-  text-shadow: 2px 2px #33AD5C;
+  text-shadow: 2px 2px $primary-color-light;
   margin-left: 40px;
 }
 
@@ -32,9 +32,9 @@ $primary-shadow:#E6E6FF;
   width: 50%;
   margin: auto;
   margin-bottom: 40px;
-  background: #FFFFCC;
+  background: $primary-color-light;
   padding: 15px;
-  border: 2px solid #D78510;
+  border: 2px solid $third-color;
 }
 
 

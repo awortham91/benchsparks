@@ -7,14 +7,14 @@ $third-color: #04839B;
 $white: #FFFFFF;
 $black: #000000;
 $gray-light: #E6E6E6;
-$primary-shadow:#E6E6FF;
+$primary-color-light:#E6E6FF;
 
 .groups_index {
   width: 70%;
   margin:auto;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(#FFFFCC, #E6E6E6);
+  background: linear-gradient($primary-color-light, $primary-color-dark);
 }
 
 .groups_table {
@@ -29,10 +29,10 @@ $primary-shadow:#E6E6FF;
 .show_div {
   display:inline-block;
   margin-left: 30px;
-  background: linear-gradient(#E6E6E6, #FFFFCC);
+  background: linear-gradient($primary-color-light, $primary-color-dark);
   position: absolute;
   padding: 20px;
-  border: 1px solid #D78510;
+  border: 1px solid $third-color;
   min-width: 15%
 }
 
@@ -42,5 +42,5 @@ $primary-shadow:#E6E6FF;
 }
 
 #students {
-  color: #635EE2;
+  color: $secondary-color-light;
 }

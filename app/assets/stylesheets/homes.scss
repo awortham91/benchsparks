@@ -7,11 +7,11 @@ $third-color: #04839B;
 $white: #FFFFFF;
 $black: #000000;
 $gray-light: #E6E6E6;
-$primary-shadow:#E6E6FF;
+$primary-color-light:#E6E6FF;
 
 #homes_back {
   height:100%;
   width: 100%;
   background-size: cover;
-  background-color: yellow;
+  background-color: $secondary-color;
 }
