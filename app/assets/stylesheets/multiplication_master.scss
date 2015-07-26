@@ -14,11 +14,13 @@ $primary-color-light:#E6E6FF;
   width: 60%;
   margin: auto;
   text-align: center;
+
 }
 
 .big_title {
   font-size: 70px;
   color: $secondary-color-light;
+  border: 2px solid $third-color;
 }
 
 #get_ready2 {
@@ -33,4 +35,9 @@ $primary-color-light:#E6E6FF;
   margin: auto;
   margin-top: 40px;
   padding-top: 20px;
+}
+
+#new_high_score {
+  color: $primary-color;
+  font-size: 50px;
 }

@@ -24,9 +24,9 @@ $(document).ready(function() {
       document.getElementById("answer_form").style.border = "5px solid #510EAB";
       document.getElementById("countdown_wrapper").style.background = "#3849B5";
 			document.getElementById("answer_zone").style.display = "block";
-			document.getElementById("info").style.display = "block";
-			first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 10) + 1);
-			second = document.getElementById("second_num").innerHTML = Math.floor((Math.random() * 10) + 1);
+
+			first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 9) + 1);
+			second = document.getElementById("second_num").innerHTML = Math.floor((Math.random() * 9) + 1);
 
       document.getElementById("counter").disabled = true;
       seconds = 5;
@@ -45,9 +45,10 @@ $(document).ready(function() {
           document.getElementById("master_title").style.display = "block";
 					document.getElementById("master_info").style.display = "block";
 					document.getElementById("answer_zone").style.display = "none";
-          document.getElementById("answer_form").style.border = "0 solid #EFA43";
+          document.getElementById("answer_form").style.border = "none";
           document.getElementById("countdown_wrapper").style.background = '#04839B';
-          document.getElementById("counter").innerHTML = "Start the timer!";
+          document.getElementById("counter").innerHTML = "Again?";
+					$("#countdown").fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
           $.ajax({
             type: "POST",
             url: "/timedpractices",
