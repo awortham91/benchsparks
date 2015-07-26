@@ -1438,8 +1438,8 @@ $topbar-height: rem-calc(60);
 $topbar-title-font-size: rem-calc(25);
 
 .top-bar .name h1 a:hover {
-  color: $primary-color;
-  background: linear-gradient($secondary-color, $secondary-color-light);
+  color: $third-color;
+  background: linear-gradient($secondary-color-light, $secondary-color);
 }
 
 .topbar_wrap {

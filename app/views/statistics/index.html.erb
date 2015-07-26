@@ -1,29 +1,27 @@
-
+<%= button_to "Back to Mystats!", statistic_path(current_user.id), method: :get, class: 'button radius', id: 'to_the_games' %>
 <div id='stats1'>
   <div id='stats3'>
     <div id='stats4'>
       <div id='inner_stats'>
         <div id='title'>
-          <p>Stats!</p>
+          <p>Leaderboard</p>
         </div>
-        <p class='stat'>Total questions answered: <%= @stats.total_questions %></p>
-        <p class='stat'>Total correct: <%= @stats.correct %></p>
-        <p class='stat'>Total incorrect: <%= @stats.incorrect %></p>
+        <% @levels.each do |level_info| %>
+        <div id='title'>
+          <p><%= level_info[0] %></p>
+        </div>
 
-      <div id='title'>
-        <p>Timed Challenges (Top 3)</p>
-      </div>
 
-      <% @levels.each do |level_info| %>
-        <p class='stat'>
-        <%= level_info[0] %>:
-        <% level_info.shift %>
-        <% level_info.each do |score| %>
-          <%= "#{score} " %> |
+          <% level_info.shift %>
+          <ol>
+            <% level_info.each do |score| %>
+              <% user = User.find(score.user_id) %>
+              <li class='stat littler'>
+                <%= user.name %>: <span class='float_mid'><%= "#{score.score} " %></span>
+              </li>
+            <% end %>
+          </ol>
         <% end %>
-        </p>
-      <% end %>
-      </div>
     </div>
   </div>
 </div>

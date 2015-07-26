@@ -28,6 +28,7 @@ $(document).ready(function() {
 			first = document.getElementById("first_num").innerHTML = Math.floor((Math.random() * 9) + 1);
 			second = document.getElementById("second_num").innerHTML = Math.floor((Math.random() * 9) + 1);
 
+      document.getElementById("answer_area").focus();
       document.getElementById("counter").disabled = true;
       seconds = 5;
       function tick() {
@@ -48,6 +49,9 @@ $(document).ready(function() {
           document.getElementById("answer_form").style.border = "none";
           document.getElementById("countdown_wrapper").style.background = '#04839B';
           document.getElementById("counter").innerHTML = "Again?";
+					document.getElementById('answer_area').value='';
+
+
 					$("#countdown").fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
           $.ajax({
             type: "POST",

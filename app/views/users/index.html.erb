@@ -10,7 +10,7 @@
     </tr>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td><%= link_to user.name, statistic_path(user.id), method: :get %></td>
           <% if user.userquestionstat %>
             <td><%= user.userquestionstat.total_questions %></td>
             <td><%= user.userquestionstat.correct %></td>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'multiplication_master'
     end
   end
-  resources :statistics, only: ["index"]
+  resources :statistics, only: ["index", "show"]
   resources :practices, only: ["index"]
   resources :users, only: ["index"]
   resources :admins, only: ["index", "new"]

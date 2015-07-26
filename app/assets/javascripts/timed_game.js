@@ -89,6 +89,7 @@ $(document).ready(function() {
 						document.getElementById("countdown_wrapper").style.background = '#04839B';
 						document.getElementById("level_select").style.visibility = "visible";
 						document.getElementById("counter").innerHTML = "Start the timer!";
+						document.getElementById('answer_area').value='';
 						$.ajax({
               type: "POST",
                url: "/timedpractices",

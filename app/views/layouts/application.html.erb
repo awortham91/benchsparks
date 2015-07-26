@@ -40,9 +40,9 @@
         </ul>
         <ul class="left">
           <%- if current_user -%>
-            <li><%= link_to "MyStats", statistics_path %></li>
             <li><%= link_to "Practice", practices_path %></li>
             <li><%= link_to "TimedPractice", timedpractices_path %></li>
+            <li><%= link_to "MyStats", statistic_path(current_user.id) %></li>
           <%- end -%>
         </ul>
       </section>
