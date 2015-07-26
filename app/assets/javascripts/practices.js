@@ -19,15 +19,17 @@ $(document).ready(function() {
       document.getElementById("color_answer").innerHTML = '';
       document.getElementById("practice_answer_area").value = '';
       document.getElementById("practice_answer_area").style.display = "block";
-			if (n === 11) {
-				var number = Math.floor((Math.random() * 10) + 1);
-				var number_two = Math.floor((Math.random() * 10) + 1);
-			} else if (n === 12) {
+			if (repeat.length > 0) {
 				var number = repeat[0];
 				var number_two = repeat[1]
 			} else {
-				var number = n;
-				var number_two = Math.floor((Math.random() * 10) + 1);
+				if (n === 11) {
+					var number = Math.floor((Math.random() * 10) + 1);
+					var number_two = Math.floor((Math.random() * 10) + 1);
+				} else {
+					var number = n;
+					var number_two = Math.floor((Math.random() * 10) + 1);
+				};
 			};
 
       document.getElementById("practice_one").innerHTML = number;
@@ -70,6 +72,7 @@ $(document).ready(function() {
 					setTimeout(function(){
 						document.getElementById("ones").disabled = false;
 						document.getElementById("input").disabled = false;
+						repeat = []
             playOnesGame(retain)
 					}, 1500);
         } else {
@@ -90,7 +93,7 @@ $(document).ready(function() {
 						document.getElementById("ones").disabled = false;
 						document.getElementById("input").disabled = false;
 						repeat = [number, number_two]
-            playOnesGame(12)
+            playOnesGame(retain)
 					}, 1500);
         };
         document.getElementById("practice_answer_area").style.display = "none";

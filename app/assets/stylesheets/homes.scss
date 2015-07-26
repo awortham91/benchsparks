@@ -9,9 +9,22 @@ $black: #000000;
 $gray-light: #E6E6E6;
 $primary-color-light:#E6E6FF;
 
-#homes_back {
-  height:100%;
-  width: 100%;
-  background-size: cover;
-  background-color: $secondary-color;
+#title_screen {
+  color: $primary-color-light;
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  width: 60%;
+  border-radius: 55px;
+  background: #510EAB;
+}
+
+#homes_title {
+  font-size: 60px;
+}
+
+.mid {
+  font-size: 20px;
 }

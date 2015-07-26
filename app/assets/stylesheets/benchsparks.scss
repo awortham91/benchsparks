@@ -16,16 +16,15 @@ $primary-color-light:#E6E6FF;
 .benchsparks_title {
   font-size: 50px;
   text-shadow: 2px 2px $secondary-color-light;
-  margin-left: 40px;
 }
 
 .benchsparks_subtitle {
   font-size: 40px;
-  margin-left: 20px;
 }
 
 .benches {
   display: inline-block;
+  padding: 4px;
 }
 
 #benchsparks_title {
@@ -35,6 +34,8 @@ $primary-color-light:#E6E6FF;
   background: $primary-color-light;
   padding: 15px;
   border: 2px solid $third-color;
+  text-align: center;
+  margin: auto;
 }
 
 

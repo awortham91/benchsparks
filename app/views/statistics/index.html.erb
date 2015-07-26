@@ -9,6 +9,20 @@
         <p class='stat'>Total questions answered: <%= @stats.total_questions %></p>
         <p class='stat'>Total correct: <%= @stats.correct %></p>
         <p class='stat'>Total incorrect: <%= @stats.incorrect %></p>
+
+      <div id='title'>
+        <p>Timed Challenges (Top 3)</p>
+      </div>
+
+      <% @levels.each do |level_info| %>
+        <p class='stat'>
+        <%= level_info[0] %>:
+        <% level_info.shift %>
+        <% level_info.each do |score| %>
+          <%= "#{score} " %> |
+        <% end %>
+        </p>
+      <% end %>
       </div>
     </div>
   </div>

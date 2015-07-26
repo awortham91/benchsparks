@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
   <title>Benchsparks</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -16,6 +17,12 @@
   <div id="bottom2"></div>
   <div class='topbar_wrap'>
     <nav class="top-bar">
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><a href="/"><%= image_tag("Benchspark.png", class: "title_image") %></a></li>
+        </ul>
+      </section>
+
       <ul class="title-area">
         <li class="name">
           <h1><a href="/benchsparks">Benchsparks</a></h1>

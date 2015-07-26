@@ -26,5 +26,9 @@
     </div>
   </div>
   <br>
-  <%= button_to "To next level", benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% if @number.to_i < 9 %>
+    <%= button_to "To next level", benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% else %>
+    <%= button_to "To next level", multiplication_master_benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% end %>
 </div>

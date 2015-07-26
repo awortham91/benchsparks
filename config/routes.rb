@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :userquestions, only: ["create"]
-  resources :timedpractices, only: ["index"]
-  resources :benchsparks, only: ["index", "show", "update"]
+  resources :timedpractices, only: ["index", "create"]
+  resources :benchsparks, only: ["index", "show", "update"] do
+    member do
+      get 'multiplication_master'
+    end
+  end
   resources :statistics, only: ["index"]
   resources :practices, only: ["index"]
   resources :users, only: ["index"]
