@@ -1,0 +1,29 @@
+<div class='multiplication_master'>
+
+  <div style="display: none" id='countdown_wrapper'><h1 id='countdown'>Ready?</h1></div>
+  <div class='big_title outer_div' id='master_title'>Multiplication<br>Master!!</div>
+  <br>
+  <div class='outer_div' id='master_info'>
+    <p>Answer as many question as possible</p>
+    <p>3 seconds per question</p>
+  </div>
+
+  <div id='user' style="display: none"><%= current_user.id %></div>
+  <button id='counter'>Start the timer!</button>
+  <div>
+  <div id='get_ready2'><span id='ready_text'>Ready?</spn></div>
+
+  <br>
+  <div id='number_one'></div>
+  <div id='number_two'></div>
+  <div id='answer_form'>
+    <form id='answer_zone' style="display: none" action=''>
+      <div id='timed_problems'><p><strong id='first_num'></strong> * <strong id='second_num'></strong></p></div>
+      <input id='answer_area' type="number"  min"1" max:"155" name="answer" autocomplete="off" autofocus>
+      <input style="visibility: hidden" type="submit" value="Submit" class='sub_button'>
+    </form>
+  </div>
+
+</div>
+
+</div>

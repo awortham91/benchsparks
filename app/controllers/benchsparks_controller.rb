@@ -21,7 +21,7 @@ class BenchsparksController < ApplicationController
   protected
 
   def authenticate_level
-    if(current_user.benchspark >= params[:id].to_i)
+    if(current_user.benchspark >= params[:id].to_i) && params[:id].to_i < 11
       return true
     else
       redirect_to benchsparks_path

@@ -35,7 +35,7 @@
   <% end %>
 </div>
 <div class='benchspark_multiplication_master'>
-  <% if current_user.benchspark > 8 %>
-    <%= button_to "Multiplication Master", benchspark_path(9), method: :get, class: 'button radius', form_class: 'benches' %>
+  <% if current_user.benchspark > 9 %>
+    <%= button_to "Multiplication Master", multiplication_master_benchspark_path(10), method: :get, class: 'button radius', form_class: 'benches' %>
   <% end %>
 </div>

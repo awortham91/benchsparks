@@ -1,7 +1,16 @@
 $(document).ready(function() {
 	if($('div').is('.time_game')){
-    var easyArray = [1,1,2,2,3,3,4,4,5,5,6,7,8,9]
+    var easyArray = [1,1,2,2,2,3,3,3,4,4,5,5,6,7]
  		var hardArray = [1,2,3,4,5,6,6,7,7,7,8,8,8,9,9,9]
+		var wrongAnswersArray = []
+
+		document.getElementById("counter").onmouseover = function() {
+			document.getElementById("ready_text").innerHTML = "Set?";
+		}
+
+		document.getElementById("counter").onmouseout = function() {
+			document.getElementById("ready_text").innerHTML = "Ready?";
+		}
 
 		function random(array) {
       var number = array[Math.floor(Math.random() * array.length)];
@@ -47,10 +56,12 @@ $(document).ready(function() {
 				second = document.getElementById("second_num").innerHTML = hard()
 			}
 
+			document.getElementById("get_ready").style.display = "none";
+      document.getElementById("countdown_wrapper").style.display = "block";
       document.getElementById("level_select").style.visibility = "hidden";
 			document.getElementById("counter").innerHTML = document.getElementById("skillz").innerHTML;
 			document.getElementById('answer_form').className += ' outer_div';
-			document.getElementById("answer_form").style.border = "5px solid #8253C1";
+			document.getElementById("answer_form").style.border = "5px solid #510EAB";
 			document.getElementById("countdown_wrapper").style.background = "#3849B5";
       document.getElementById("points").innerHTML = 0;
       document.getElementById("total_right").innerHTML = 0;
@@ -60,21 +71,38 @@ $(document).ready(function() {
       document.getElementById("counter").disabled = true;
         var seconds = 61;
         function tick() {
-            var counter = document.getElementById("countdown");
-            seconds--;
-            counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds);
-            if( seconds > 0 ) {
-                setTimeout(tick, 1000);
-            } else {
-							document.getElementById('answer_form').className -= ' outer_div';
-              document.getElementById("counter").disabled = false;
-              document.getElementById("answer_zone").style.display = "none";
-              document.getElementById("stats").style.display = "block";
-							document.getElementById("answer_form").style.border = "0 solid #EFA43";
-							document.getElementById("countdown_wrapper").style.background = '#04839B';
-							document.getElementById("level_select").style.visibility = "visible";
-							document.getElementById("counter").innerHTML = "Start the timer!";
-            };
+          var counter = document.getElementById("countdown");
+          seconds--;
+          counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds);
+          if( seconds > 0 ) {
+              setTimeout(tick, 1000);
+          } else {
+						var levelData = {
+							"level": level,
+							"score": document.getElementById("points").innerHTML
+						};
+						document.getElementById('answer_form').className -= ' outer_div';
+            document.getElementById("counter").disabled = false;
+            document.getElementById("answer_zone").style.display = "none";
+            document.getElementById("stats").style.display = "block";
+						document.getElementById("answer_form").style.border = "0 solid #EFA43";
+						document.getElementById("countdown_wrapper").style.background = '#04839B';
+						document.getElementById("level_select").style.visibility = "visible";
+						document.getElementById("counter").innerHTML = "Start the timer!";
+						$.ajax({
+              type: "POST",
+               url: "/timedpractices",
+							contentType: "application/json",
+							dataType: "json",
+							data: JSON.stringify(levelData),
+               success: function(response) {
+                 console.log(response);
+               },
+               error: function(response) {
+                 console.log(response)
+               }
+            });
+          };
         };
         tick();
 

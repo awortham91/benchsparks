@@ -9,6 +9,24 @@ $black: #000000;
 $gray-light: #E6E6E6;
 $primary-color-light:#E6E6FF;
 
+#benchspark_questions p {
+  font-size: 60px;
+}
+
+
+
+.overall_title {
+  width:50%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.benchsparks {
+  text-align: center;
+}
+
 .medium_font {
   font-size: 30px;
 }
@@ -16,16 +34,15 @@ $primary-color-light:#E6E6FF;
 .benchsparks_title {
   font-size: 50px;
   text-shadow: 2px 2px $secondary-color-light;
-  margin-left: 40px;
 }
 
 .benchsparks_subtitle {
   font-size: 40px;
-  margin-left: 20px;
 }
 
 .benches {
   display: inline-block;
+  padding: 4px;
 }
 
 #benchsparks_title {
@@ -35,6 +52,8 @@ $primary-color-light:#E6E6FF;
   background: $primary-color-light;
   padding: 15px;
   border: 2px solid $third-color;
+  text-align: center;
+  margin: auto;
 }
 
 
@@ -51,4 +70,13 @@ $primary-color-light:#E6E6FF;
 .benchspark_multiplication_master {
   display: block;
   text-align: center;
+}
+
+#countdown {
+  display: inline;
+  border: 2px solid $third-color;
+  border-radius: 50px;
+  padding: 7px;
+  background: $secondary-color-light;
+  color: $primary-color-light
 }

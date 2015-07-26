@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def correct
     @userquestionstat = Userquestionstat.find_or_create_by!(user_id: current_user.id)
+
     @userquestionstat.correct += 1
     if @userquestionstat.save
       render json: { statusText: "it worked" }

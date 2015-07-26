@@ -17,6 +17,8 @@
  */
 
 
+
+
  .outer_div {
       box-shadow: 0 0 20px 2px gray;
       border-radius: 15px;
@@ -44,4 +46,10 @@ body {
   background: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSgOck71Ndhr_4dGA1dV9oE-EiuZaMgMTfavNVwve_00LHm0RoUUQ');
   background-size: cover;
   background-attachment:fixed;
+}
+
+.title_image {
+    height: auto;
+    width: auto;
+    max-height: 50px;
 }

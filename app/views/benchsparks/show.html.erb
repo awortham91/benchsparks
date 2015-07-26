@@ -1,19 +1,19 @@
 <div class='benchsparks'>
 <div id='user_id' style="display: none"><%= current_user.id %></div>
 <div id='user_level' style="display: none"><%= current_user.benchspark %></div>
-
-  <h1><strong id='level'><%= @number %></strong>'s Challenge!</h1>
-
+  <div class='overall_title outer_div'>
+    <h1><strong id='level'><%= @number %></strong>'s Challenge!</h1>
+  </div>
   <div id='user' style="display: none"><%= current_user.id %></div>
   <button id='counter'>Start the timer!</button>
-
+  <br>
   <h1 id='countdown'>Ready?</h1>
-
+  <br>
   <div id='number_one'></div>
   <div id='number_two'></div>
   <div id='answer_form'>
     <form id='answer_zone' style="display: none" action=''>
-      <div><p><strong id='first_num'></strong> * <strong id='second_num'></strong></p></div>
+      <div id='benchspark_questions'><p><strong id='first_num'></strong> * <strong id='second_num'></strong></p></div>
       <input id='answer_area' type="number" min='1' max='155' name="answer" autocomplete="off" autofocus>
       <input style="visibility: hidden" type="submit" value="Submit" class='sub_button'>
     </form>
@@ -26,5 +26,9 @@
     </div>
   </div>
   <br>
-  <%= button_to "To next level", benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% if @number.to_i < 9 %>
+    <%= button_to "To next level", benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% else %>
+    <%= button_to "To Multiplication Master!", multiplication_master_benchspark_path(@number.to_i + 1), method: :get, class: 'button radius', id: 'next_level', style: 'display:none' %>
+  <% end %>
 </div>
