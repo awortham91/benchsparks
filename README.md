@@ -10,13 +10,13 @@ supplemental and rich teacher tabs for teachers to be able to track the abundanc
 to best inform their teaching.
 
 select a number.
-![specific practice image](/images/specific practice.png)
+![specific practice image](../images/specific practice.png)
 practice practice practice.
-![practice image](/images/practice.png)
+![practice image](../images/practice.png)
 level up your timed game scores.
-![level practice image](/images/level practice.png)
+![level practice image](./images/level practice.png)
 See how many you can achieve!
-![timed practice image](/images/timed practice.png)
+![timed practice image](./images/timed practice.png)
 Then onto your benchsparks.
 ![benchsparks image](/images/bench sparks.png)
 answer 15 of each and earn them all!
