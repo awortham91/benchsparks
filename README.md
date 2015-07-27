@@ -10,7 +10,7 @@ supplemental and rich teacher tabs for teachers to be able to track the abundanc
 to best inform their teaching.
 
 select a number.
-![specific practice image](specific.png) practice.png)
+![specific practice image](/app/assests/images/specific.png) practice.png)
 practice practice practice.
 ![practice image](practice.png)
 level up your timed game scores.
