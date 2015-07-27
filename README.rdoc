@@ -1,28 +1,29 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+![benchsparks logo](/images/Benchspark.png)
 
 Ruby version: 2.0.0
 
-* System dependencies
+Benchsparks is a multiplication fluency app that allows students to make the most of their limited computer time
+by having them answer as many multiplication questions as possible.  There is no teaching element to the app as that is the
+job of the teacher, instead this app is geared towards teachers who want to build a fluency for their students with an app
+that takes the rote task of multiplication memorization and gamifies it in an exiting fast paced way.  There are also a set of
+supplemental and rich teacher tabs for teachers to be able to track the abundance of data that the studnets produce in practicing
+to best inform their teaching.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+select a number.
+![specific practice image](/images/specific practice.png)
+practice practice practice.
+![practice image](/images/practice.png)
+level up your timed game scores.
+![level practice image](/images/level practice.png)
+See how many you can achieve!
+![timed practice image](/images/timed practice.png)
+Then onto your benchsparks.
+![benchsparks image](/images/bench sparks.png)
+answer 15 of each and earn them all!
+![another benchsparks image](/images/benchsparks.png)
+Track session stats
+![practice stats image](/images/practice stats.png)
+Track all your stats.
+![stats image](/images/stats.png)
+Keep those numbers rising!
+Give your students the tools to become great!
