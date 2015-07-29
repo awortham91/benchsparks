@@ -53,7 +53,6 @@ class GroupsController < ApplicationController
 
   def show
     group = Group.find(params[:id])
-    @group_id = params[:id]
     info = {}
     info[:name] = group.name
     info[:users] = []
