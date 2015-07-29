@@ -2,11 +2,11 @@
   <table id="users_table">
     <caption>All Students</caption>
     <tr>
-      <th>Students</th>
-      <th>total_questions</th>
-      <th>correct questions</th>
-      <th>incorrect questions</th>
-      <th>percent correct</th>
+      <th><a href='users'>Students</a></th>
+      <th><a href='users?q=total_questions'>total_questions</a></th>
+      <th><a href='users?q=correct'>correct questions</a></th>
+      <th><a href='users?q=incorrect'>incorrect questions</a></th>
+      <th><a href='users?q=percent'>percent correct</a></th>
     </tr>
     <% @users.each do |user| %>
       <tr>

@@ -12,8 +12,13 @@ Rails.application.routes.draw do
   resources :statistics, only: ["index", "show"]
   resources :practices, only: ["index"]
   resources :users, only: ["index"]
-  resources :admins, only: ["index", "new"]
-  resources :groups
+  resources :admins, except: ["show"]
+  resources :groups do
+    member do
+      get 'show_stats'
+    end
+
+  end
   resources :questions, only: ["update"] do
     member do
       get 'timedgame'

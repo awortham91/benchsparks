@@ -4,6 +4,11 @@ class AdminsController < ApplicationController
     @users = User.where(admin:true)
   end
 
+  def new
+    binding.pry
+    
+  end
+
   protected
 
   def authenticate_admin
