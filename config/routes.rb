@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   end
   resources :statistics, only: ["index", "show"]
   resources :practices, only: ["index"]
-  resources :users, only: ["index"]
-  resources :admins, except: ["show"]
+  resources :users, only: ["index", "update", "show"] do
+    member do
+      patch 'add_admin'
+      patch 'remove_admin'
+    end
+  end
+  resources :admins, only: ["index", "new"]
   resources :groups do
     member do
       get 'show_stats'

@@ -1,6 +1,6 @@
-<%= form_for @admin do |f| %>
-
-  <%= f.collection_check_boxes :user_ids, User.all, :id, :name %>
-
-  <%= f.submit "Make these people admin" %>
-<% end %>
+<div>
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= button_to "This is a teacher", add_admin_user_path(user.id), method: :patch, class: 'button radius tiny' %>
+  <% end %>
+</div>

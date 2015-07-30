@@ -10,6 +10,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
+  def add_admin
+    user = User.find(params[:id])
+    user.admin = true
+    user.save
+    redirect_to admins_path
+  end
+
+  def remove_admin
+    user = User.find(params[:id])
+    user.admin = false
+    user.save
+    redirect_to users_path
+  end
+
   protected
 
   def authenticate_admin

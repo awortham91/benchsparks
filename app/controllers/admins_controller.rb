@@ -5,8 +5,7 @@ class AdminsController < ApplicationController
   end
 
   def new
-    binding.pry
-    
+    @users = User.where(admin:false)
   end
 
   protected
