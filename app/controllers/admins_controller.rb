@@ -4,6 +4,10 @@ class AdminsController < ApplicationController
     @users = User.where(admin:true)
   end
 
+  def new
+    @users = User.where(admin:false)
+  end
+
   protected
 
   def authenticate_admin

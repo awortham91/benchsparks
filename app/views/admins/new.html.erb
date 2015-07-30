@@ -1,1 +1,6 @@
-<p>hi</p>
+<div>
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= button_to "This is a teacher", add_admin_user_path(user.id), method: :patch, class: 'button radius tiny' %>
+  <% end %>
+</div>

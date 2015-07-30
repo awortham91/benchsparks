@@ -1,0 +1,18 @@
+<%= button_to "back", groups_path, method: :get, class: 'button radius tiny' %>
+<% average = [] %>
+<% total_answered = [] %>
+<% total_correct = [] %>
+
+<div><% @group.name %></div>
+<div>
+  <% @group.users.each do |user| %>
+    <p><%= user.name %></p>
+    <% total_correct << user.userquestionstat.correct %>
+    <% total_answered << user.userquestionstat.total_questions %>
+    <% end %>
+</div>
+<div>
+  <p>group total answered: <%= total = total_answered.inject(:+) %></P>
+  <p>group total correct: <%= correct = total_correct.inject(:+) %></P>
+  <p>group average: <%= ((correct.to_f / total.to_f) * 100).round(2) %>%</P>
+</div>

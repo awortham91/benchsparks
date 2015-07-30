@@ -2,7 +2,8 @@
   <p class='admin_title'>The Admin Team!</p>
   <ul>
     <% @users.each do |user| %>
-      <%= user.name %>
+      <p><%= user.name %><%= button_to "This is not a teacher", remove_admin_user_path(user.id), method: :patch, class: 'button radius tiny' %></p>
     <% end %>
   </ul>
+    <%= button_to "Make someone an admin", new_admin_path, method: :get, class: 'button radius' %>
 </div>

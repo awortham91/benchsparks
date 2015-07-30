@@ -1,17 +1,21 @@
-<%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: 'new_group' %>
-<div class='groups_index outer_div'>
-  <table class='groups_table'>
-    <caption>All Groups</caption>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= button_to "edit", edit_group_path(group.id), method: :get, class: 'tiny button radius' %></td>
-        <td><%= button_to "delete", "groups/#{group.id}", method: :delete, data: {confirm: "Are you sure you want to destory #{group.name}?"}, class: 'tiny button radius' %></td>
-        <td><button class='tiny' onclick = show(<%= group.id %>)>show group</button></td>
-    <% end %>
-  </table>
-  <div class='show_div'>
-    <div id='name'>see groups here</div>
-    <div id='students'></div>
+
+  <%= button_to "Create a group", new_group_path, method: :get, class: 'button radius', form_class: 'new_group' %>
+  <div class='groups_index outer_div'>
+    <table class='groups_table'>
+      <caption>All Groups</caption>
+      <% @groups.each do |group| %>
+        <tr>
+          <td><%= group.name %></td>
+          <td><%= button_to "edit", edit_group_path(group.id), method: :get, class: 'tiny button radius' %></td>
+          <td><%= button_to "delete", "groups/#{group.id}", method: :delete, data: {confirm: "Are you sure you want to destory #{group.name}?"}, class: 'tiny button radius' %></td>
+          <td><button class='tiny' onclick =show(<%= group.id %>)>show group</button></td>
+      <% end %>
+    </table>
+    <div class='show_div'>
+      <div id='name'>see groups here</div>
+      <div id='students'></div>
+      <% @groups.each do |group| %>
+        <%= button_to "To Group Stats",  "/groups/#{group.id}/show_stats", method: :get, class: 'button radius tiny disappear', id: group.id, style: 'display:none' %>
+      <% end %>
+    </div>
   </div>
-</div>
