@@ -62,6 +62,10 @@ class GroupsController < ApplicationController
     render json: info
   end
 
+  def show_stats
+    @group = Group.find(params[:id])
+  end
+
   private
 
   def group_params
