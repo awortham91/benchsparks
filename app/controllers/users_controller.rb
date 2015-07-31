@@ -5,17 +5,7 @@ class UsersController < ApplicationController
     if params[:q] == nil
       @users = User.order(:name).where(admin:false)
     elsif params[:q] == 'percent'
-      users = User.joins(:userquestionstat).all
-      sort_by_percent = {}
-      users.each do |user|
-        sort_by_percent[user.id] = (user.userquestionstat.correct.to_f/user.userquestionstat.total_questions.to_f).round(4)
-      end
-      final_array = []
-        sort_by_percent = sort_by_percent.sort_by {|id, percent| percent}
-        sort_by_percent.each do |id, percent|
-          final_array << id
-        end
-        @users = User.find(final_array).sort_by{|percent| final_array.index percent.id}
+      @users = User.order_by_correct_answer_percentage
     else
       @users = User.joins(:userquestionstat).order("userquestionstats.#{params[:q]}")
     end

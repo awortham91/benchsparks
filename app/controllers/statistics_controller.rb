@@ -16,7 +16,7 @@ class StatisticsController < ApplicationController
 
   def show
     if current_user.id == params[:id].to_i || current_user.admin == true
-      @stats = Userquestionstat.find_or_create_by user: params[:id]
+      @stats = Userquestionstat.find_or_create_by user_id: params[:id].to_i
       @levels = []
       Level.all.each do |lev|
         level_name = lev.level

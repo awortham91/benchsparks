@@ -12,15 +12,22 @@
       <tr>
         <td><%= link_to user.name, statistic_path(user.id), method: :get %></td>
           <% if user.userquestionstat %>
-            <td><%= user.userquestionstat.total_questions %></td>
-            <td><%= user.userquestionstat.correct %></td>
-            <td><%= user.userquestionstat.incorrect %></td>
-            <td><%= (user.userquestionstat.correct.to_f / user.userquestionstat.total_questions.to_f).round(2) %></td>
+            <% if user.userquestionstat.total_questions != 0 %>
+              <td><%= user.userquestionstat.total_questions %></td>
+              <td><%= user.userquestionstat.correct %></td>
+              <td><%= user.userquestionstat.incorrect %></td>
+              <td><%= (user.userquestionstat.correct.to_f / user.userquestionstat.total_questions.to_f).round(2) %></td>
+            <% else %>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            <% end %>
           <% else %>
             <td>0</td>
             <td>0</td>
             <td>0</td>
-            <td>NaN</td>
+            <td>0</td>
           <% end %>
       </tr>
     <% end %>
