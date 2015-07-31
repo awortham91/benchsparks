@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :statistics, only: ["index", "show"]
   resources :practices, only: ["index"]
-  resources :users, only: ["index", "update", "show"] do
+  resources :users, only: ["index", "update", "show", "edit", "update"] do
     member do
       patch 'add_admin'
       patch 'remove_admin'

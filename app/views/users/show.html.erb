@@ -1,0 +1,7 @@
+<div class="text-center">
+  <p>User Profile</p>
+  <span><b>name:</b> <%= @user.name %></span><br />
+  <span><b>email:</b> <%= @user.email %></span><br />
+  <br>
+  <%= link_to "Edit Profile", edit_user_path(@user), class: "button small radius" %>
+</div>
