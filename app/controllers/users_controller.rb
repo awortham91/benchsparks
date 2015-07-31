@@ -5,21 +5,10 @@ class UsersController < ApplicationController
     if params[:q] == nil
       @users = User.order(:name).where(admin:false)
     elsif params[:q] == 'percent'
-      #this is a monstrosity place holder until I can think of a better solution.
-      #I know this needs to be leaner and more efficient, it was just my first
-      #attempt, so I just wanted to get it to work.
-      users = User.joins(:userquestionstat).order("id")
+      users = User.joins(:userquestionstat).all
       sort_by_percent = {}
-      correct = []
-      totals = []
-      ids = []
       users.each do |user|
-        correct << user.userquestionstat.correct
-        totals << user.userquestionstat.total_questions
-        ids << user.id
-      end
-      totals.each_with_index do |total, index|
-        sort_by_percent[ids[index]] = (correct[index].to_f/total.to_f).round(4)
+        sort_by_percent[user.id] = (user.userquestionstat.correct.to_f/user.userquestionstat.total_questions.to_f).round(4)
       end
       final_array = []
         sort_by_percent = sort_by_percent.sort_by {|id, percent| percent}
