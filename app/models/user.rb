@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
   def total_questions
     if userquestionstat
-      userquestionstat.total_questions
+      userquestionstat.total_questions.to_f
     else
       0.00001
     end
