@@ -36,6 +36,21 @@ $primary-color-light:#E6E6FF;
   min-width: 15%
 }
 
+.groups_stats1 {
+  display:inline-block;
+  background: linear-gradient($primary-color-light, $secondary-color-light);
+  border: 1px solid $third-color;
+  width: 60%;
+}
+
+.groups_stats2 {
+  margin-top: 20px;
+  display:inline-block;
+  background: linear-gradient($secondary-color-light, $primary-color-light);
+  border: 1px solid $third-color;
+  width: 60%;
+}
+
 #name {
   color: #150fb3;
   font-size: 20px;
@@ -47,4 +62,8 @@ $primary-color-light:#E6E6FF;
 
 .disappear {
   margin: auto;
+}
+
+.groups_stats_title {
+  font-size: 40px;
 }
